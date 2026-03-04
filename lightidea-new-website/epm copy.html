@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle EPM</title>
+    <style>
+      ::-webkit-scrollbar {
+        height: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #f1f9ff; 
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background:  #f1f9ff; 
+        height:3px
+      }
+      ::-webkit-scrollbar-thumb:hover {
+      }
+      .t-Footer{
+        display:none;
+      }
+      .container{
+        width:100%;
+      }
+      p{
+        line-height: 1.2em;
+      }
+      body,p,h1,h2,h3,h4,h5,h6{
+        font-family: "Poppins", sans-serif;
+      }
+      .d-flex{
+        display:flex;
+      }
+      .banner {
+        position: relative;
+        height: 700px;
+      }
+      .banner-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: 0;    
+        background-image: url(./assets/epm/oracleEPMBanner.png);
+        background-position: top;
+        background-repeat: round;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .banner-text {   
+        text-align: center;
+        z-index: 1;
+        display: block;
+        position: absolute;
+        margin-top: 18%;
+      }
+      .banner-text h1 {
+        font-size: 7rem;
+        margin-bottom: 20px;
+        color:#001D31;
+        font-weight:700;
+      }
+      .banner-text p {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        color:#001D31;
+        font-weight: 500;
+      }
+      .banner-text button {
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #0074C4;
+        padding: 22px 50px;
+        border: 0px;
+        color: white;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #33909D, #026cb5);
+        font-size: 2rem;
+        margin: 10px 0px;
+        text-decoration: underline;
+      }
+      .section1-1{    
+        color: #000;
+        padding: 0% 16%;
+        font-size: 2rem;
+      }
+      .exploreHeading{
+        padding-top: 2%;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background-image: linear-gradient(to right, #5CC1CF 30%, #026CB5 90%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+        font-weight:700;
+        text-align: center;
+      }
+
+      /* css slider */
+      body {background-color: #fff;background-image: linear-gradient(150deg,#F1F9FF 30%,#DFF2FF 100%); overflow-x: hidden; -webkit-font-smoothing: antialiased; margin: 0;}
+      .flex { display: -webkit-flex; display: flex; -webkit-flex-direction: row;  flex-direction: row; -webkit-justify-content: flex-start; justify-content: flex-start;}
+      .slider-wrapper div {position: relative;}
+      .slider-wrapper {margin-top: 5vw;  margin-left: 0vw;}
+      .slide-image {height: 24vw;}
+      .slide-image img {width: 40vw; cursor: pointer;}
+      .slide-content {width: 50vw; color: #001D31; padding: 0vw 2vw 0vw 2vw;}
+      .slide-date {color: #0a8acb; font-size: 1.1vw; font-weight: 400; letter-spacing: 0.1vw; padding-bottom: 1.4vw;}
+      .slide-title {font-size: 1.2vw; font-weight: 400; letter-spacing: 0.1vw; line-height: 1.55vw; padding-bottom: 1.8vw;}
+      .slide-text {font-size: 0.80vw; line-height: 1.2vw; opacity: 0.8; padding-bottom: 4vw;}
+      .slide-more {font-weight: 400; letter-spacing: 0.1vw; float: left; font-size: 0.9vw;}
+      .slide-bullet {width: 0.5vw; height: 0.5vw; background-color: #0b8bcc; border-radius: 200%; position: relative; margin-left: 1.2vw;}
+      .slide-nav {margin-left: 64vw; margin-top: -5.5vw;}
+      div.overlay-blue {width: 100%; height: 100%; position: absolute; top: 0; transition: 0.5s ease all;}
+      div.overlay-blue:hover {background-color: rgba(13, 27, 43, 0.5);}
+      .arrows{width: 3.5vw;margin-top: 5vw;margin-left: 50vw;position: relative;}
+      .arrow {display: inline-block; position: absolute; width: 1.2vw; height: 1.2vw; background: transparent; text-indent: -9999px; border-top: 0.15vw solid #001D31; border-left: 0.15vw solid #001D31; transition: all .1s ease-in-out; text-decoration: none; color: transparent;
+      }
+      .arrow:hover {border-color: #0A8ACB; border-width: 0.25vw;
+      }
+      .arrow:before {display: block; height: 200%; width: 200%; margin-left: -50%; margin-top: -50%; content: ""; transform: rotate(45deg);}
+      .arrow.prev {transform: rotate(-45deg); left: 0;}
+      .arrow.next {transform: rotate(135deg); right: 0;}
+      .slide-content li{ 
+        list-style-type: none;
+      }
+      .slide-content ul{ 
+        padding-left:0px;
+      }
+      .sliderClass{
+        margin-bottom:10%;
+      }
+      .slider-content h3{
+        font-weight: 500;
+      }
+
+      /* epm video*/
+      .epmVideoFrame{
+        width:80%;
+        margin:0% 10%;
+        height:500px;
+        transition: all .3s ease-in-out;
+      }
+      .epmVideoFrame:hover{
+        transform: scale(1.1);
+      }
+      .epmVideo{
+        overflow:hidden;
+      }
+      .section3{
+        margin-top:5%;
+      }
+      .section3-1-1-1Div{
+        color:#fff;
+        background-color:#026CB5;
+        padding:10%;
+        text-align: right;
+        margin-bottom:15px;
+      }
+      .section3-1-1-1Div p{
+        font-size:2.5rem;
+      }
+      .section3-1-1{
+        width:20%;
+      }
+      .section3-1-2{
+        width: 80%;
+        padding: 6%;
+        margin: 4% 0%;
+        background-color: #83E2EF;
+      }
+      .section3-1-2 h2{
+        color:#026CB5;
+        padding-left:40%;
+        font-weight: 700;
+        font-size: 5rem;
+      }
+      .section3-1-1-1 {
+        width:210%;
+        position:relative;
+        transition: all .3s ease-in-out;
+      }
+      .section3-1-1-2 {
+        width:240%;
+        position:relative;
+        transition: all .3s ease-in-out;
+      }
+      .section3-1-1-3 {
+        width:200%;
+        position:relative;
+        transition: all .3s ease-in-out;
+      }
+      .section3-1-1-1:hover {
+        width:220%; 
+      }
+      .section3-1-1-2:hover {
+        width:250%; 
+      }
+      .section3-1-1-3:hover {
+        width:210%;
+      }
+     
+    </style>
+</head>
+<body>
+  <div>
+    <section class="banner" >
+      <div class="banner-video">
+      </div>
+      <div class="banner-text">
+        <div class="animate__animated animate__backInUp">
+          <h1>The #1 Cloud Enterprise <br>Perfomance Solution</h1>
+          <div class="section1 ">
+            <div class="section1-1">
+                Enterprise Performance Management (EPM) is an essential tool for any modern business looking to 
+                understand and optimize their performance. EPM helps organizations capture, measure, analyze 
+                and integrate information from multiple sources to identify key trends that can help provide insights 
+                into the operations of a business development plan
+            </div>
+          </div>  
+        </div>
+        <br><br>  
+        <div>
+          
+          <div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="epmVideo">
+        <iframe class="epmVideoFrame" src="https://www.youtube.com/embed/-35s0j1etLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+    </div>
+    <div class="section3">
+        <div class="section3-1 d-flex">
+            <div class="section3-1-1">
+                <div class="section3-1-1-1 section3-1-1-1Div">
+                    <p>01</p>
+                    <p>Breadth and Depth</p>
+                </div>
+                <div class="section3-1-1-2 section3-1-1-1Div">
+                    <p>02</p>
+                    <p>Flexible Deployment</p>
+                </div>
+                <div class="section3-1-1-3 section3-1-1-1Div">
+                    <p>03</p>
+                    <p>Integration and security</p>
+                </div>
+            </div>
+            <div class="section3-1-2">
+                <h2>Top 3 reasons to choose <br>Oracle Cloud EPM</h2>
+            </div>
+        </div>
+    </div>
+    <div class="sliderClass">
+      <h2 class="exploreHeading">Oracle Cloud Enterprise Performance <br>Management Solutions</h2>
+      <div class="slider">
+        <div class="slider-wrapper flex">
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/planningBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Planning</h3>
+              <p>Drive agile, connected plans from scenario modeling and long-range planning to budgeting and line of business planning that are built on best practices and advanced technologies.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>	
+          </div>	
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/profitabilityBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Profitability and Cost Management</h3>
+              <p>Understand your most profitable products or lines of business and, inversely, your biggest costs, to make more informed decisions about where to take the business. Build transparent allocation models for profitability analysis, shared service costing, IT financial management, tax transfer pricing.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/financialConsolidationBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Financial Consolidation and Close</h3>
+              <p>Adapt quickly to changing business and compliance requirements while delivering faster, more accurate, and transparent reporting. Leverage built-in functionality that covers the full spectrum of end-to-end close tasks.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/accountreconciliationBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Account Reconciliation</h3>
+              <p>Automate account reconciliations and transaction matching. Improve the efficiency and accuracy of your financial statements while addressing security and risk typically associated with the process.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/taxReportingBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Tax Reporting</h3>
+              <p>Align tax with corporate financial reporting for better visibility and compliance. Deliver transparent corporate tax processes—including tax provision and country by country reporting (CbCR).</p>
+              <a class="epmButton">Request a demo</a>
+            </div>	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/narrativeReportBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Narrative Reporting</h3>
+              <p>Stay ahead of internal and external reporting requirements with narrative reporting for collaboratively authoring and publishing financial, management, and regulatory report packages.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>  	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/freeformBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Freeform</h3>
+              <p>Drive better decisions with the multidimensional analysis, planning, modeling, and reporting in Oracle Fusion Cloud Enterprise Performance Management (EPM). Oracle Cloud Freeform delivers the familiar power and flexibility of Essbase with the scalability and governance of SaaS. If you can imagine it, you can build it.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>  	
+          </div>
+          <div class="slide flex">
+            <div class="slide-image slider-link next"><img src="./assets/epm/enterpriseDataManagementBig.webp"><div class="overlay"></div></div>
+            <div class="slide-content">
+              <h3>Enterprise Data Management</h3>
+              <p>Manage business change with enterprise data management, including enterprise data governance, change data visualization, and hierarchy management.</p>
+              <a class="epmButton">Request a demo</a>
+            </div>  	
+          </div>
+        </div>
+        <div class="arrows">
+        <a href="#" title="Previous" class="arrow slider-link prev"></a>
+        <a href="#" title="Next" class="arrow slider-link next"></a>
+        </div>
+        </div>
+    </div>
+    <script>
+      ( function($) {  
+        $(document).ready(function() {         
+          var s           = $('.slider'),
+              sWrapper    = s.find('.slider-wrapper'),
+              sItem       = s.find('.slide'),
+              btn         = s.find('.slider-link'),
+              sWidth      = sItem.width(),
+              sCount      = sItem.length,
+              slide_date  = s.find('.slide-date'),
+              slide_title = s.find('.slide-title'),
+              slide_text  = s.find('.slide-text'),
+              slide_more  = s.find('.slide-more'),
+              slide_image = s.find('.slide-image img'),
+              sTotalWidth = sCount * sWidth;
+          sWrapper.css('width', sTotalWidth);
+          sWrapper.css('width', sTotalWidth);
+          
+          var clickCount  = 0;
+          
+          btn.on('click', function(e) {
+            e.preventDefault();
+
+            if( $(this).hasClass('next') ) {
+              
+              ( clickCount < ( sCount - 1 ) ) ? clickCount++ : clickCount = 0;
+            } else if ( $(this).hasClass('prev') ) {
+              
+              ( clickCount > 0 ) ? clickCount-- : ( clickCount = sCount - 1 );
+            }
+            TweenMax.to(sWrapper, 0.4, {x: '-' + ( sWidth * clickCount ) })
+
+
+            //CONTENT ANIMATIONS
+
+            var fromProperties = {autoAlpha:0, x:'-50', y:'-10'};
+            var toProperties = {autoAlpha:0.8, x:'0', y:'0'};
+
+            TweenLite.fromTo(slide_image, 1, {autoAlpha:0, y:'40'}, {autoAlpha:1, y:'0'});
+            TweenLite.fromTo(slide_date, 0.4, fromProperties, toProperties);
+            TweenLite.fromTo(slide_title, 0.6, fromProperties, toProperties);
+            TweenLite.fromTo(slide_text, 0.8, fromProperties, toProperties);
+            TweenLite.fromTo(slide_more, 1, fromProperties, toProperties);
+
+          });
+                
+        });
+      })(jQuery);
+      $('.overlay').addClass('overlay-blue');
+    </script>
+  </div>
+</div>   
+</body>
+</html>

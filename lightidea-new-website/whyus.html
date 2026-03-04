@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- popins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- popins font end -->
+   <!-- bootstrap cdn -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- boot strap end
+   <link rel="stylesheet" href="./styles/index.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightidea</title>
+  <style>
+    body, p, h1, h2, h3, h4, h5, h6 {
+        font-family: "Poppins", sans-serif;
+    }
+    .d-flex{
+        display:flex;
+    }
+    video {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+    .banner {
+        position: relative;
+        height: 700px;
+    }
+    .banner-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .banner-video video {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .banner-text {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        color: #fff;
+        width: 80%;
+    }
+    .banner-text button {
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #0074C4;
+        padding: 12px 30px;
+        border: 0px;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2em;
+        margin: 10px 0px;
+        text-decoration: underline;
+    }
+    #stickytypeheader{
+        margin-left: 15.5%;
+    }
+    .stickyh2-1{
+        padding-top: 10%;
+        text-align: center;
+        font-size: 4.5em;
+        font-weight: 800;
+        color: #006BB4;
+        background-color: #5cc1cf;
+        background-size: 100%;
+        background-image: linear-gradient(45deg, #5CC1CF 20%, #026CB5 40%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+    .section2Block{  
+        margin-left: 15.5%;
+        width: 70%;
+        background-color: #5cc1cf;
+        padding: 5%;
+        margin-right: 5%;
+        margin-bottom: 10%;
+        background-image: linear-gradient(to right, #B5F6FF 10%, #5CC1CF 70%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .section2Blockh2{
+        font-weight:700;
+        color:#000;
+        margin-bottom:5%;
+        padding-bottom: 5%;
+    }
+    .section2-1,.section2-2{
+        width:50%;
+    }
+    .section3Block{
+        width: 40%;
+        background-color: #0074C4;
+        padding: 3%;
+        margin-right: 10%;
+        margin-left: 30%;
+        margin-bottom: 5%;
+        color: white;
+        background-image: linear-gradient(to right, #5cc1cf 2%, #026cb5 100%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .section3Blockh2{
+        font-weight:700;
+        color:#ffffff;
+        margin-bottom:5%;
+    } 
+    .section4Block{    
+        width: 40%;
+        background-color: #cceaff;
+        padding: 3%;
+        margin-right: 10%;
+        margin-left: 55%;
+        margin-bottom: 5%;
+        background-image: linear-gradient(to left, #cef9ff 5%, #a0ccea 100%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .section4Blockh2{
+        font-weight:700;
+        color:#000;
+        margin-bottom:5%;
+    }
+    .section5Block{
+        width: 40%;
+        background-color: #0074C4;
+        padding: 3%;
+        margin-right: 10%;
+        margin-left: 30%;
+        margin-bottom: 5%;
+        color: white;
+        background-image: linear-gradient(to left, #5cc1cf 2%, #026cb5 100%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .section5Blockh2{
+        font-weight:700;
+        color:#ffffff;
+        margin-bottom:5%;
+    } 
+    .section6Block{
+       
+        margin-left: 15.5%;
+        width: 30%;
+        background-color: #5cc1cf;
+        padding: 5%;
+        margin-right: 5%;
+        margin-bottom: 10%;
+        background-image: linear-gradient(to right, #B5F6FF 10%, #5CC1CF 70%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .section6Blockh2{
+        font-weight:700;
+        color:#000;
+        margin-bottom:5%;
+    }
+    #stickytypeheader6{
+        display:none;   
+        position: fixed;
+        bottom: 20px;
+        margin-left: 12%;
+        padding: 3% 5%;
+        width: 50%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .stickyh6-1{
+        text-align: left;
+        font-size: 3em;
+        font-weight: 700;
+        color: black;
+        background-color: #fff;
+    }
+ 
+    .section6-1,.section6-2{
+        width:50%;
+    }
+    .stickyh6-1Link{
+        color: #006BB4;
+        font-size: 2.2em;
+        text-decoration: underline;
+        font-weight: 700;
+        text-align: center;
+    }
+    .section7{
+        padding:10%;
+    }
+    .relativeDiv{
+        position: relative;
+    }
+    /*
+    .stickytypeheader6Div{
+        margin-left: 15.5%;
+        padding: 5% 10%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        background-color: white;
+    } */   
+  </style>
+</head>
+<body>
+    <div>
+        <section class="banner" >
+            <div class="banner-video">
+              <video autoplay muted>
+                <source src="./assets/whyus/whyusBanner.mp4" type="video/mp4" >
+              </video>
+            </div>
+            <div class="banner-text">
+                <button class="whyBannerContactBtn">Contact Us</button>
+            </div>
+        </section>
+    </div>
+    <div class="section2 d-flex">
+        <div class="section2-1">
+            <div id="stickytypeheader">
+                <h2 class="stickyh2-1">Out Scope of <br>Uniqueness</h2>
+            </div>
+            <div id="sticky">
+            </div>
+        </div>
+        <script>
+            $(function(){
+            var stickyHeaderTop = $('#stickytypeheader').offset().top;
+    
+            $(window).scroll(function(){
+                    if( $(window).scrollTop() > stickyHeaderTop ) {
+                            $('#stickytypeheader').css({position: 'fixed', top: '0px'});
+                            $('#sticky').css('display', 'block');
+                    } else {
+                            $('#stickytypeheader').css({position: 'static', top: '0px'});
+                            $('#sticky').css('display', 'none');
+                    }
+                });
+            });
+        </script>
+        <div class="section2-2">
+            <div class="section2Block" >
+                <h2 class="section2Blockh2">Adept and attentive <br>support team</h2>
+                <p class="section2Blockhp">At Lightidea, we take pride in our Adept and attentive support team.
+                    Our team is available consistently to help you with any inquiries you
+                    may have, and to provide practical and effective solutions. We
+                    understand that every customer is different, and we tailor our support
+                    accordingly. Whether you need help with a technical issue, or you
+                    have a question about one of our products, we will be there for you.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="section3Block">
+            <h2 class="section3Blockh2">All-in-one <br>Solutions Gate</h2>
+            <p class="section3Blockhp">All-In-One Solutions Gate from Lightidea is the perfect choice for
+                businesses that need comprehensive coverage. We offer
+                products and services that cover all aspects of your business,
+                from the smallest details to the big-picture view. We can
+                customize a solution to fit the specific needs of your company,
+                no matter what size or scope of work you have. Our All-In-One
+                Solutions Gate is the one-stop shop for all your business needs.
+            </p>
+        </div>
+    </div>
+    <div class="section4">
+        <div class="section4Block">
+            <h2 class="section4Blockh2">Information <br>Security</h2>
+            <p class="section4Blockhp">The internet has changed the way we do business, and information
+                security has become a top priority for companies of all sizes. At
+                Lightidea, we take data security seriously, and we are committed to
+                protecting your confidential information. We use the latest security
+                technologies to ensure that your data is safe, and we have a team of
+                security experts who are constantly monitoring our systems.
+            </p>
+        </div>
+    </div>
+    <div class="5">
+        <div class="section5Block">
+            <h2 class="section5Blockh2">Cross-Cultural<br>Company</h2>
+            <p class="section5Blockhp">Lightidea is a multinational company that provides its services from five headquarters in different countries, which are UAE, Saudi Arabia, Egypt, Sultanate of Oman and India.The company1 team covers the MENA region, which provides a better understanding of different business cultures and needs.This allows the company to better serve its clients in the MENA region.
+            </p>
+        </div>
+    </div>
+    <div class="relativeDiv">
+        <div id="stickytypeheader6" >
+            <h2 class="stickyh6-1">DO NOT LET THE CHALLENGES<br>TIE YOUR HANDS</h2>
+            <a class="stickyh6-1Link">Schedule your session</a>
+        </div>
+        <div class="section6 d-flex">
+            <div class="section6-1">
+            </div>
+            <script>
+                $(function(){
+                var stickyHeaderTop6 = $('.section4Blockhp').offset().top;
+        
+                $(window).scroll(function(){
+                    console.log(" scroll top"+$(window).scrollTop() );
+                    console.log(" scroll top of header"+$('.section4Blockhp').offset().top);
+                        if( $(window).scrollTop() > stickyHeaderTop6 ) {
+                            $('#stickytypeheader6').css('display', 'block');
+                        } else {
+                            $('#stickytypeheader6').css('display', 'none');
+                        }
+                    });
+                }); 
+            </script>
+            <div class="section6-2">
+                <div class="section2Block" >
+                    <h2 class="section2Blockh2">Multinational Tax <br>Authority</h2>
+                    <p class="section2Blockhp">Our experts have a deep understanding of tax laws across multiple jurisdictions. We are experienced with the tax regulations and compliance requirements of each country where your company operates. We also have expertise in transfer pricing, cross-border transactions and national and international tax planning
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section7"></div>
+    </div>
+</body>
+</html>

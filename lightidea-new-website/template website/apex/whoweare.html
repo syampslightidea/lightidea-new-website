@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>Who we are</title>
+    <style>
+        .a-Menu-label {
+            font-size:1.4rem;
+        }
+        .t-Header-nav-list li {
+            font-size: 1.4rem;
+            font-weight: 400;
+            padding: 8px;
+        }
+        .row .col.col-end {
+            padding-inline-end: var(--ut-grid-gutter-width, 0px);
+        }
+        .row .col.col-start {
+            padding-inline-start: var(--ut-grid-gutter-width, 0px);
+        }
+        ::-webkit-scrollbar {height: 3px;}
+        ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px #f1f9ff;border-radius: 2px;}
+        ::-webkit-scrollbar-thumb {background:#f1f9ff;height:3px;}
+        .t-Footer{display:none;}
+        .container{width:100%;}
+        p{line-height: 2.5rem;}
+        li{line-height: 2.5rem;font-size:1.6rem;}
+        .section3Text {
+            padding-bottom: 2%;
+            padding-right: 30%;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .imageDivText {
+            display: none;
+            padding-right: 5px;
+            font-size: 1.6rem;
+        }
+        .footer2contactText p {font-size:1.6rem;}    
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        .section3ImgDiv::-webkit-scrollbar {
+            display: none;
+        }
+        .section3ImgDiv {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .d-flex{
+            display: flex;
+        }
+        section{
+            padding:2% 10%;
+        }
+        .scaleImage{
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+        .scaleImage:hover
+        {
+            box-shadow: 0px 0px 10px #444;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+        .textDiv1,.imageDiv1{
+            width:50%;
+        }
+        .textDiv1{
+            margin: auto;
+        }
+        .imageDiv1 img{
+            width:100%;
+        }
+        .section1{
+            padding: 5% 10%;
+            background-color: #D9D9D9;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0 0 0 / 90%)), url(#WORKSPACE_FILES#whoweare/whowearebanner.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: left;
+        }
+        .bannerHeading{
+            font-size:6rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .bannerText{
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .section2Heading,.section5Heading{    
+            font-size: 5rem;
+            color: #3594D6;
+            text-decoration: underline;
+            text-underline-offset: 30px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #B5BDC1;
+        }
+        .textDiv1 ul{
+            font-weight: 500;
+            font-size: 1.6rem;   
+        }
+        .textDiv1Text{
+            padding-top: 5%;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .textDiv1Heading{
+            font-size:4rem;
+        }
+        .leftDiv{
+            padding-right:20px;
+        }
+        .rightDiv{
+            padding-left:20px;
+        }
+        .section3Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section3Text{
+            padding-right:30%;
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section3Image :first-child{
+            border-left:0px;
+        }
+        .section3Image{
+            border-left: 1px solid black;
+            height: 250px;
+            width: 100%;
+        }
+        .imgMainDiv{
+            width:25%;
+            overflow:hidden;
+        }
+        .section3ImgDiv{
+            width:100%;
+            overflow:scroll;
+        }
+        .imgMainDiv:hover{
+            width:50%;
+        }
+        .imageDivText{
+            display:none;
+        }
+        .imgMainDiv:hover .imageDivText{
+            display:block
+        }
+        .imgMainDiv:hover h2{
+            font-size:3rem;
+            font-weight: 700;
+        }
+        .section4{
+            background-color: #D7DFE4;
+            margin: 0% 5%;
+            padding: 5%;
+        }
+        .section4Heading{
+            font-size: 6rem;
+            color: #026CB5; 
+            padding-bottom:20px;
+            font-weight: 400;
+        }
+        .section4InnerMainDiv{
+            padding-right: 10%;
+        }
+        
+        .section4InnerDivHeading{
+            font-weight: 700;
+            font-size: 3rem;
+            padding-bottom: 15px;
+        }
+        .section4InnerSubDiv{
+            width:50%;
+        }
+        .section4InnerDivText{
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .section4InnerSubDiv{
+            padding-right:5%;
+        }
+        .imageDiv1{
+            margin-bottom:30px;
+        }
+        .section6{
+            background-color: #CEEBFF;
+        }
+        .section7{
+            background-color: #0E2D3D;
+            color:#fff;
+        }
+        #lilogo{
+            width: 150px;
+        }
+        .footer1 h2{
+            font-size: 4rem;
+            font-weight: 700; 
+        }
+        .footer1 p{
+            font-size: 1.8rem;
+            font-weight: 500; 
+        }
+        .footer2P{
+            font-size: 1.8rem;
+            font-weight: 400; 
+        }
+        .footer2 h3{
+            font-size: 3rem;
+            font-weight: 600;
+        }.footer2contactDetails{
+            padding:0% 10% 5% 0%
+        }
+        .footer2contactText p {font-size:1.6rem;}  
+        .section8Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section8Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section8{
+            padding:5%;
+        }
+        .section8section1{
+            width:50%;
+            padding-right:5%;
+        }
+        .section8section2{
+            width:50%;
+            padding-left:5%;
+        }
+        .imageDiv1Mobile{
+            display:none;
+        }
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 4rem;
+            }
+            .bannerText {
+                font-size: 1.5rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
+            .leftDiv {
+                padding-right: 10px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1 img {
+                width: 100%;
+                height: 400px;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 5px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+        }
+        @media  (max-width: 501px) {  
+            .d-flex{
+                display: block;
+            }
+            .textDiv1, .imageDiv1 {
+                width:100%;
+            }
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 2.5rem;
+            }
+            .bannerText {
+                font-size: 1.2rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 0px;
+            }
+            .leftDiv,.rightDiv {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv {
+                width: 100%;
+            }
+            .imgMainDiv:hover {
+                width: 100%;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1Mobile{
+                display:block;
+                padding-bottom: 10%;
+            }
+            .imageDiv1Desk{
+                display:none;
+            }
+            .imageDiv1Mobile img , .imageDiv1 img {
+                width: 100%;
+                height: unset;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 0px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.2rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+            #lilogo {
+                width: 80px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+            .footer2contactText p {
+                font-size: 1.2rem;
+            }
+            .footer2 h3 {
+                margin-top: -10px;
+                margin-bottom:-5px;
+            }
+            .section4InnerSubDiv {
+                width: 100%;
+            }
+            .section8section1,.section8section2 {
+                width: 100%;
+                padding-right: 0%;
+                padding-left: 0%;
+            }
+            .section8Heading {
+                font-size: 2.5rem;
+            }
+            .section8Text {
+                font-size: 1.2rem;
+            }
+            .section3Image {
+                border-left: 1px solid black;
+                height: 135px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <div>
+            <div>
+                <h1 class="bannerHeading">Who We Are</h1>
+                <p class="bannerText">At LightIdea IT Consultancy, we are a forward-thinking technology partner dedicated to delivering innovative IT solutions that help businesses unlock their full potential. With a global presence and a deep commitment to excellence, we are at the forefront of driving digital transformation, empowering organizations to adapt and thrive in an ever-evolving technological landscape.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div>
+            <h2 class="section2Heading">Our Expertise</h2><br>
+        </div>
+        <br><br>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Digital Transformation
+                </h2>
+                <p class="textDiv1Text"> Helping organizations transition to modern digital platforms for enhanced efficiency and agility.
+                    
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage"src="#WORKSPACE_FILES#whoweare/digitalTransformation.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/softwaredevelopment.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Software Development
+                </h2>
+                <p class="textDiv1Text">Crafting custom software solutions tailored to meet your business needs and goals.
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/softwaredevelopment.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Cloud Solutions
+                </h2>
+                <p class="textDiv1Text">Enabling scalable and flexible cloud-based infrastructure to improve accessibility and operational efficiency.
+                   
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/cloudSolutions.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/cybersecurity.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Cybersecurity
+                </h2>
+                <p class="textDiv1Text">Protecting your business from evolving cyber threats with robust security frameworks and solutions. 
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/cybersecurity.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">IT Consulting
+                </h2>
+                <p class="textDiv1Text">Providing strategic guidance to help businesses navigate the complexities of technology and achieve sustainable growth.
+                   
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/itconsulting.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="section3">
+        <div>
+            <h2 class="section3Heading">Global Presence</h2>
+            <p class="section3Text">Our success is built on the foundation of a global reach with local expertise. We are proud to have a presence across key markets, ensuring that we deliver value to businesses in diverse regions:
+            </p>
+        </div>
+        <div class="d-flex section3ImgDiv">
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"style="border:0px;" src="#WORKSPACE_FILES#whoweare/uae.png">
+                    <h2>UAE</h2>
+                    <p class="imageDivText">As our regional hub, our office in the UAE enables us to serve clients across the Emirates with world-class IT services, focusing on industries such as finance, healthcare, and retail.</p>
+                </div>
+            </div>
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="#WORKSPACE_FILES#whoweare/saudiarabia.png">
+                    <h2>Saudi Arabia</h2>
+                        <p class="imageDivText">With a deep understanding of the Saudi market, we provide tailored IT solutions that support the Kingdom's Vision 2030 and help businesses adapt to a rapidly changing digital landscape.</p>
+                </div>
+            </div>            
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="#WORKSPACE_FILES#whoweare/egypt.png">
+                    <h2>Egypt</h2>
+                        <p class="imageDivText">Our office in Egypt supports businesses with innovative IT services to stay competitive in the region's growing tech market. We focus on sectors such as education, manufacturing, and government.</p>
+                </div>
+            </div>   
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"src="#WORKSPACE_FILES#whoweare/india.png">
+                    <h2>India</h2>
+                        <p class="imageDivText">Serving as our development center, LightIdea India delivers high-quality, cost-effective IT solutions, ensuring a competitive edge for businesses globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div>
+            <h2 class="section4Heading">why choose Us?</h2>
+            <div class="section4InnerMainDiv">
+                <div class="section4InnerDiv d-flex">
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Tailored Solutions</h3>
+                        <p class="section4InnerDivText">We understand that every business is unique, which is why we offer customized solutions designed to meet your specific goals and challenges.</p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Expert Team</h3>
+                        <p class="section4InnerDivText">Our team is composed of highly skilled professionals with expertise in various technologies, industries, and domains.</p>
+                    </div>
+                </div>
+                <div class="section4InnerDiv d-flex">    
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading"> Proven Track Record</h3>
+                        <p class="section4InnerDivText">We have successfully delivered projects across multiple industries, consistently exceeding client expectations and driving results.</p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Innovative Mindset</h3>
+                        <p class="section4InnerDivText">We are constantly exploring new technologies and methodologies to ensure that our solutions are cutting-edge and future-ready.</div>
+                </div>
+                <div class="section4InnerDiv d-flex">    
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Customer-Centric Approach</h3>
+                        <p class="section4InnerDivText">Your success is our priority. We collaborate closely with you to ensure that our solutions align with your strategic objectives and deliver long-term value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section8" >
+        <div class="d-flex">
+            <div class="section8section1">
+                <h2 class="section8Heading">Our Mission</h2>
+                <p class="section8Text">Our mission is to provide businesses with the tools and strategies they need to succeed in the digital era. Through our tailored IT solutions, we aim to streamline operations, enhance customer experiences, and drive sustainable growth for our clients.
+                </p>
+            </div>
+            <div class="section8section2">
+                <h2 class="section8Heading">Our Vision</h2>
+                <p class="section8Text">Our vision is to be the trusted partner of choice for businesses around the world, driving their growth through innovative IT solutions that are both strategic and impactful. We aim to empower organizations to embrace digital change and achieve excellence in everything they do.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div>
+            <h2 class="section4Heading">Our Values</h2>
+            <div class="section4InnerMainDiv">
+                <div class="section4InnerDiv d-flex">
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Innovation</h3>
+                        <p class="section4InnerDivText">We continuously explore new technologies and approaches to create groundbreaking solutions for our clients.</p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Integrity</h3>
+                        <p class="section4InnerDivText">We operate with transparency, honesty, and a strong sense of responsibility in every aspect of our work.</p>
+                    </div>
+                </div>
+                <div class="section4InnerDiv d-flex">    
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Collaboration</h3>
+                        <p class="section4InnerDivText">We believe in building strong, long-lasting relationships with our clients, partners, and team members to achieve collective success.</p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Excellence</h3>
+                        <p class="section4InnerDivText">We strive for perfection in every project, ensuring that we deliver results that exceed expectations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section5">
+        <div>
+            <h2 class="section5Heading">Success Stories</h2>
+        </div>
+        <br>
+        <br>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading"> Government Efficiency 
+                    Enhancement
+                </h2>
+                <p class="textDiv1Text">  Partnered with the Weapons Authority in Abu Dhabi to implement a unified 
+                    Oracle Financial and HR system, enhancing transparency and decision
+                    making.
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/governmentEfficiency.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Transforming Financial 
+                    Planning
+                </h2>
+                <p class="textDiv1Text">  Enabled Mubadala to achieve advanced financial planning and reporting 
+                    through Oracle EPM solutions.
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#whoweare/financialPlanning.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Modernizing Public Sector 
+                    Systems
+                </h2>
+                <p class="textDiv1Text">  Provided reliable support and maintenance for Hyperion and HR systems 
+                    at Abu Dhabi Judicial Department, ensuring operational resilience.
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage"src="#WORKSPACE_FILES#whoweare/moderpublicsector.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="section6">
+        <div class="footer1"><br><br>
+            <img id="lilogo" src="#WORKSPACE_FILES#common/lilogo.png"><br><br>
+            <h2>Start Your Transformation Journey</h2>
+            <p>Lightidea is here to help you navigate the complexities of digital transformation.</p>
+        </div>
+    </section>
+    <section class="section7">
+        <div class="footer2"><br><br>
+            <p class="footer2P">Let's collaborate</p>
+            <p class="footer2P">to unlock your organization's potential.</p><br>
+            <h3>Contact us</h3><br>
+            <div class="d-flex">
+                <div class="footer2contactDetails">
+                    <p class="footer2P"><span class="footerContactBtn"><img src="#WORKSPACE_FILES#common/call.png">&nbsp; +971 543 711199</span></p>
+                    <p class="footer2P"><span class="footerContactBtn"><img src="#WORKSPACE_FILES#common/message.png">&nbsp; info@lightidea.com</span></p>
+                </div>
+                <div class="footer2contactText">
+                    <p>Discover how we can <br>
+                        empower your business<br>
+                        www.lightidea.org
+                    </p>
+                </div>                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who we are</title>
+    <style>
+      ::-webkit-scrollbar {
+        height: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #f1f9ff; 
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background:  #f1f9ff; 
+        height:3px
+      }
+      ::-webkit-scrollbar-thumb:hover {
+      }
+      .t-Footer{
+        display:none;
+      }
+      .container{
+        width:100%;
+      }
+      p{
+        line-height: 1.2em;
+      }
+      body,p,h1,h2,h3,h4,h5,h6{
+        font-family: "Poppins", sans-serif;
+      }
+      body{
+        background-color: #DFF2FF;
+      }
+      .d-flex{
+        display:flex;
+      }
+      .banner {
+            padding: 10% 0% 0% 0%;
+      }
+      .banner-image {
+        width:100%;
+        height:250px;
+        background-image: url(./assets/fusion/fusionBannerDesktop.webp);
+        background-position: center;
+        background-repeat: round;
+        background-size: 100% 100%;
+      }
+      .bannerH1{
+        font-size: 4em;
+        font-weight: 700;
+        color: aliceblue;
+        padding-left:5%;
+        padding-top: 45px;
+        background-image:linear-gradient(45deg, #F1F9FF 5%, #B5F6FF 20%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+      }
+      .section2 {
+        padding-left:5%;
+        padding-top:2%;
+        width:60%;
+      }
+      .section2p{
+        font-size:1.5em;
+      }
+      .section3{
+        padding-left: 5%;
+        padding-top: 2%;
+      }
+      /* tabs css */
+      .content{
+        padding:5%;
+      }
+      .tabs li{  
+        list-style: none;
+      }
+      .heading {
+        text-align: center;
+      }
+      .tab button, .tab.button {
+        position: relative;
+        display: inline-block;
+        color: #000;
+        padding: 0.75rem 2rem;
+        margin: 0 auto;
+        border: none;
+        width: 100%;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      
+      button:hover:before, button:hover:after, .button:hover:before, .button:hover:after {
+      color: #4cc4cf;
+      }
+      /* ---------------------- Vertical Tabs */
+      /*---------- vertical tab nav */
+      #vertical_tab_nav {
+        display: block;
+        width: 100%;
+      }
+      #vertical_tab_nav ul {
+        display: block;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        overflow: hidden;
+        width: 30%;
+        border-radius: 10px 0 0 10px;
+        color:black;
+      }
+
+      #vertical_tab_nav li {
+        text-align: left;
+        padding: 0px;
+        margin-right: 15%;
+      }
+
+      #vertical_tab_nav li:last-child {
+        margin-bottom: 0px;
+        border-bottom: 0px;
+      }
+
+      #vertical_tab_nav li a {
+        display: block;
+        font-size: 1.5em;
+        color: #000;
+        text-decoration: none;
+        padding: 2%;
+        padding-left:15%;
+        transition:all .8s;
+      }
+      #vertical_tab_nav li a:hover {
+        padding-left:0%;
+        font-weight:700;
+        border-style : solid;
+        border-top:0px;
+        border-left:0px;
+        border-right:0px;
+        border-width:8px;
+        border-image: linear-gradient(to left, #5CC1CF 20%, #026cb5 30%, #001D31 85%, #03292E 95%)1;
+      }
+      #vertical_tab_nav li a.selected {
+        background: #DFF2FF;
+        color: #000;
+        font-weight:700;
+        padding-left:0%;
+        border-style : solid;
+        border-top:0px;
+        border-left:0px;
+        border-right:0px;
+        border-width:8px;
+        border-image:linear-gradient(to left, #5CC1CF 20%, #026cb5 30%, #001D31 85%, #03292E 95%)1;
+      }
+      #vertical_tab_nav div {
+        display: block;
+        float: left;
+        background:#DFF2FF;
+        width: 64%;
+        min-height: 320px;
+        padding: 3% 3% 3% 3%;
+        border-radius: 0 10px 10px 0;
+        background-image: linear-gradient(to left, #B5F6FF 10%, #5CC1CF 20%, #026cb5 30%, #001D31 85%, #03292E 95%);
+        color:white;
+        margin-bottom:5%;
+      }
+      #vertical_tab_nav div article {
+        display: none;
+        margin: 0px;
+        color:white;
+      }
+      #vertical_tab_nav div article p {
+        margin: 0px 0px 20px 0px;
+        font-size: 1.5em;
+      }
+      .tab_drawer_heading {
+        display: none;
+      }
+      @media screen and (max-width: 781px) {
+        ul.tabs {
+          display: none;
+        }
+        .tab_container {
+          display: block;
+          margin: 0 auto;
+          width: 95%;
+          border-top: none;
+          border-radius: 0;
+          box-shadow: 0px 0px 10px black;
+        }
+        .tab_drawer_heading {
+          background-color: #ccc;
+          color: #000;
+          margin: 0;
+          padding: 5px 20px;
+          display: block;
+          cursor: pointer;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-align: center;
+         
+        }
+        .d_active {
+          background: #DFF2FF;
+        }
+      } 
+      .tabContainerListP{
+        margin-bottom:3px;
+      }
+  </style>
+</head>
+<body>
+  <div>
+    <section class="banner" >
+      <div class="banner-image">
+        <h1 class="bannerH1">Oracle Fusion Cloud<br>Application Suite</h1>
+      </div>
+    </section>
+    <div class="section2">
+        <div>
+            <p class="section2p">Oracle Fusion Cloud brings consistent processes and a single source of truth across the most important business functions from enterprise resource planning, supply chain management, and human capital management to advertising and customer experience. The applications help you improve your customer engagements, increase your business's agility, and react to change faster than ever before</p>
+        </div>
+        <button>Contact us</button>
+        <br>
+    </div>
+    <div class="section3">
+        <section id="vertical_tab_nav">
+
+            <ul class="tabs">
+              <li  class="selected"><a href="index.html">Enterprise Resource Planning (ERP)</a></li>
+              <li><a href="index.html">Human Resources Talent </br>Management (HCM)</a></li>
+              <li><a href="index.html">Services</a></li>
+              <li><a href="index.html">Supply Chain & </br>Management (SCM)</a></li>
+              <li><a href="index.html">Sales</a></li>
+              <li><a href="index.html">Marketing</a></li>
+            </ul>
+          
+            <div class="tab_container">
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content One</h2>
+                <p class="tabContainerListP">Financials</p>
+                <p class="tabContainerListP">Accounting Hub</p>
+                <p class="tabContainerListP">Procurement</p>
+                <p class="tabContainerListP">ERP Analytics</p>
+                <p class="tabContainerListP">Project Management</p>
+                <p class="tabContainerListP">Risk Management</p>
+                <p class="tabContainerListP">Compliance</p>
+              </article>
+          
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content Two</h2>
+                <p class="tabContainerListP">Human Resources</p>
+                <p class="tabContainerListP">Talent Management</p>
+                <p class="tabContainerListP">HCM</p>
+              </article>
+          
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content Three</h2>
+                <p class="tabContainerListP">Fusion Service</p>
+                <p class="tabContainerListP">B2C Service</p>
+                <p class="tabContainerListP">Field Service</p>
+                <p class="tabContainerListP">Live Experience</p>
+                <p class="tabContainerListP">Service Monitoring for</p>
+                <p class="tabContainerListP">Connected Assets</p>
+              </article>
+          
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content Four</h2>
+                <p class="tabContainerListP">Supply Chain Planning</p>
+                <p class="tabContainerListP">Inventory Management</p>
+                <p class="tabContainerListP">Manufacturing</p>
+                <p class="tabContainerListP">Maintenance</p>
+                <p class="tabContainerListP">Order Management</p>
+                <p class="tabContainerListP">Procurement</p>
+                <p class="tabContainerListP">Service Logistics</p>
+                <p class="tabContainerListP">Management</p>
+                <p class="tabContainerListP">Intelligent Track and Trace</p>
+                <p class="tabContainerListP">Internet of Things (IOT)</p>
+                <p class="tabContainerListP">Things (IOT)</p>
+                <p class="tabContainerListP">SCM Analytics</p>
+              </article>
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content Five</h2>
+                
+                <p class="tabContainerListP">Sales Automation</p>
+                <p class="tabContainerListP">Customer Data</p>
+                <p class="tabContainerListP">Management</p>
+                <p class="tabContainerListP">DataFox</p>
+                <p class="tabContainerListP">Commerce</p>
+                <p class="tabContainerListP">Configure, Price, Quote</p>
+                <p class="tabContainerListP">Subscription</p>
+                <p class="tabContainerListP">Management</p>
+                <p class="tabContainerListP">Partner Relationship</p>
+                <p class="tabContainerListP">Management</p>
+                <p class="tabContainerListP">Loyalty</p>
+              </article>
+              <article>
+                <h2 class="d_active tab_drawer_heading">Tab Content Six</h2>
+                <p class="tabContainerListP">B2B Marketing</p>
+                <p class="tabContainerListP">B2C Marketing</p>
+                <p class="tabContainerListP">Unity Customer Data</p>
+                <p class="tabContainerListP">Platform</p>
+              </article>
+          
+            </div>
+            <script>
+                $(document).ready(function() {
+                //----------Select the first tab and div by default
+
+                $('#vertical_tab_nav > ul > li > a').eq(0).addClass("selected");
+                $('#vertical_tab_nav > div > article').eq(0).css('display', 'block');
+
+                //---------- This assigns an onclick event to each tab link("a" tag) and passes a parameter to the showHideTab() function
+
+                $('#vertical_tab_nav > ul').click(function(e) {
+
+                if ($(e.target).is("a")) {
+
+                    /*Handle Tab Nav*/
+                    $('#vertical_tab_nav > ul > li > a').removeClass("selected");
+                    $(e.target).addClass("selected");
+
+                    /*Handles Tab Content*/
+                    var clicked_index = $("a", this).index(e.target);
+                    $('#vertical_tab_nav > div > article').css('display', 'none');
+                    $('#vertical_tab_nav > div > article').eq(clicked_index).fadeIn();
+
+                }
+
+                $(this).blur();
+                return false;
+
+                })
+
+                }); //end ready
+                /* if in drawer mode */
+                $(".tab_drawer_heading").click(function() {
+                    
+                    $(".tab_content").hide();
+                    var d_activeTab = $(this).attr("rel"); 
+                    $("#"+d_activeTab).fadeIn();
+                    
+                    $(".tab_drawer_heading").removeClass("d_active");
+                    $(this).addClass("d_active");
+                    
+                    $("ul.tabs li").removeClass("active");
+                    $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+                });
+  
+            </script>
+          </section>
+    </div>
+    <div class="section4">
+        <br><br><br>
+    </div>
+  </div>
+</div>   
+</body>
+</html>

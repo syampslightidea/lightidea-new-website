@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>EPM</title>
+    <style>
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        .section3ImgDiv::-webkit-scrollbar {
+            display: none;
+        }
+        .section3ImgDiv {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .d-flex{
+            display: flex;
+        }
+        section{
+            padding:2% 10%;
+        }
+        .scaleImage{
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+        .scaleImage:hover
+        {
+            box-shadow: 0px 0px 10px #444;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+        .textDiv1,.imageDiv1{
+            width:50%;
+        }
+        .textDiv1{
+            margin: auto;
+        }
+        .imageDiv1 img{
+            width:100%;
+            height: 450px;
+            margin:auto;
+        }
+        .section1{
+            padding: 5% 10%;
+            background-color: #D9D9D9;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0 0 0 / 90%)), url(../assets/demo/epm/epmBanner.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: left;
+        }
+        .bannerHeading{
+            font-size:6rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .bannerText{
+            font-size: 1.7rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .section2Heading,.section5Heading{    
+            font-size: 5rem;
+            color: #3594D6;
+            text-decoration: underline;
+            text-underline-offset: 30px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #B5BDC1;
+        }
+        .textDiv1 ul{
+            font-weight: 500;
+            font-size: 1.6rem;   
+        }
+        .textDiv1Text{
+            padding-top: 5%;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .textDiv1Heading{
+            font-size:4rem;
+        }
+        .leftDiv{
+            padding-right:20px;
+        }
+        .rightDiv{
+            padding-left:20px;
+        }
+        .section3Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section3Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section3Image :first-child{
+            border-left:0px;
+        }
+        .section3Image{
+            border-left: 1px solid black;
+            height: 250px;
+            width: 100%;
+        }
+        .imgMainDiv{
+            width:25%;
+            overflow:hidden;
+        }
+        .section3ImgDiv{
+            width:100%;
+            overflow:scroll;
+        }
+        .imgMainDiv:hover{
+            width:50%;
+        }
+        .imageDivText{
+            display:none;
+        }
+        .imgMainDiv:hover .imageDivText{
+            display:block;
+            padding-left:10px;
+        }
+        .imgMainDiv:hover h2{
+            font-size:3rem;
+            font-weight: 700;
+            padding-left:10px;
+        }
+        .section4{
+            background-color: #D7DFE4;
+            margin: 0% 5%;
+            padding: 5%;
+        }
+        .section4Heading{
+            font-size: 6rem;
+            color: #026CB5; 
+            padding-bottom:20px;
+            font-weight: 400;
+        }
+        .section4InnerMainDiv{
+            padding-right: 10%;
+        }
+        
+        .section4InnerDivHeading{
+            font-weight: 700;
+            font-size: 3rem;
+            padding-bottom: 15px;
+        }
+        .section4InnerDivText{
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .section4InnerSubDiv{
+            padding-right:5%;
+            width:50%;
+        }
+        .imageDiv1{
+            margin-bottom:30px;
+        }
+        .section6{
+            background-color: #CEEBFF;
+        }
+        .section7{
+            background-color: #0E2D3D;
+            color:#fff;
+        }
+        #lilogo{
+            width: 150px;
+        }
+        .footer1 h2{
+            font-size: 4rem;
+            font-weight: 700; 
+        }
+        .footer1 p{
+            font-size: 1.8rem;
+            font-weight: 500; 
+        }
+        .footer2P{
+            font-size: 1.8rem;
+            font-weight: 400; 
+        }
+        .footer2 h3{
+            font-size: 3rem;
+            font-weight: 600;
+        }.footer2contactDetails{
+            padding:0% 10% 5% 0%
+        }    
+        .section8Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section8Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section8{
+            padding:3% 5%;
+        }
+        .section8section1{
+            width:50%;
+            padding-right:5%;
+        }
+        .section8section2{
+            width:50%;
+            padding-left:5%;
+        }
+        .imageDiv1Mobile{
+            display:none;
+        }
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 4rem;
+            }
+            .bannerText {
+                font-size: 1.5rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
+            .leftDiv {
+                padding-right: 10px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1 img {
+                width: 100%;
+                height: 400px;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 5px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+        }
+        @media  (max-width: 501px) { 
+            .d-flex{
+                display: block;
+            }
+            .textDiv1, .imageDiv1 {
+                width:100%;
+            }
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 2.5rem;
+            }
+            .bannerText {
+                font-size: 1.2rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 0px;
+            }
+            .leftDiv,.rightDiv {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            .section3Heading {
+                
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv {
+                width: 100%;
+            }
+            .imgMainDiv:hover {
+                width: 100%;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1Mobile {
+                display: block;
+                margin-bottom: 10%;
+            }
+            .imageDiv1Desk{
+                display:none;
+            }
+            .imageDiv1Mobile img , .imageDiv1 img {
+                width: 100%;
+                height: unset;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 0px;
+            }
+            .section4Heading {
+                font-size: 2.5rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+            #lilogo {
+                width: 150px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+            .section8Heading {
+                font-size: 2.5rem;
+                color: #3594D6;
+            }
+            .section8Text {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .imageDiv1{
+                margin-bottom: 10%;
+            }
+            .section4InnerSubDiv {
+                width: 100%;
+            }
+            .section4InnerDivHeading {
+                padding-bottom: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <div>
+            <div>
+                <h1 class="bannerHeading">Welcome to LightIdea <br>Your Partner for Oracle EPM Excellence </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div>
+            <h2 class="section2Heading">Our EPM Expertise</h2>
+        </div>
+        <br><br>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Comprehensive Planning and Budgeting</h2>
+                <p class="textDiv1Text">LightIdea leverages Oracle Planning and Budgeting Cloud Service (PBCS) to streamline your planning processes. Our experts help you: 
+                    <ul>
+                        <li>Simplify financial planning and operational budgeting.</li>
+                        <li>Implement driver-based models for better accuracy. </li>
+                        <li>Enable rolling forecasts to adapt to changing conditions. </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage"src="../assets/demo/epm/planningAndBudgeting.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage" src="../assets/demo/epm/financialClose.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Efficient Financial Close and Consolidation</h2>
+                <p class="textDiv1Text">We optimize your financial close process with Oracle Financial Consolidation and Close (FCCS). LightIdea ensures: 
+                    <ul>
+                        <li>Faster and accurate consolidation. </li>
+                        <li>Automated intercompany eliminations. </li>
+                        <li>Compliance with accounting standards like GAAP and IFRS. </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage" src="../assets/demo/epm/financialClose.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Profitability and Cost Management </h2>
+                <p class="textDiv1Text">Gain deeper insights into cost drivers and profitability with Oracle Profitability and Cost Management Cloud Service (PCMCS). Our solutions enable: 
+                    <ul>
+                        <li>Allocation-based costing. </li>
+                        <li>Advanced profitability analysis. </li>
+                        <li>Scenario modeling for informed decision-making. </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="../assets/demo/epm/profitabilityAndCost.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage"  src="../assets/demo/epm/strategicModeling.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Strategic Modeling and Reporting </h2>
+                <p class="textDiv1Text">LightIdea empowers organizations with Oracle Narrative Reporting and Strategic Modeling tools to: 
+                    <ul>
+                        <li>Perform long-term financial planning. </li>
+                        <li>Collaborate on comprehensive narrative reports. </li>
+                        <li>Conduct what-if scenarios to evaluate business impacts. </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage"  src="../assets/demo/epm/strategicModeling.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="section3">
+        <div>
+            <h2 class="section3Heading">About Lightidea</h2><br>
+            <p class="section3Text">At LightIdea, we are dedicated to transforming the way businesses approach Enterprise Performance Management (EPM). As a leading IT consultancy, we specialize in delivering tailored solutions that empower organizations to make data-driven decisions, optimize processes, and achieve unparalleled efficiency. With years of expertise and a client-centric approach, we bring your vision to life through innovative technology solutions. 
+            </p><br>
+            <h2 class="section3Heading">Our Proven Process</h2><br>
+        </div>
+        <div class="d-flex section3ImgDiv">
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"style="border:0px;" src="../assets/demo/epm/discovery.jpg">
+                    <h2>Discovery </h2>
+                    <p class="imageDivText">We begin by understanding your organization's unique needs and challenges, identifying opportunities for improvement. </p>
+                </div>
+            </div>
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="../assets/demo/epm/strategyDevelopment.jpg">
+                    <h2> Strategy Development</h2>
+                        <p class="imageDivText">LightIdea crafts a tailored roadmap that aligns Oracle EPM capabilities with your business objectives.</p>
+                </div>
+            </div>            
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="../assets/demo/epm/implementation.jpg">
+                    <h2>Implementation </h2>
+                        <p class="imageDivText">Our certified consultants implement Oracle EPM solutions with precision, ensuring minimal disruption and maximum impact.</p>
+                </div>
+            </div>   
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"src="../assets/demo/epm/trainingSupport.jpg">
+                    <h2>Training and Support</h2>
+                        <p class="imageDivText">Our certified consultants implement Oracle EPM solutions with precision, ensuring minimal disruption and maximum impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div>
+            <h2 class="section4Heading">why choose Lightidea?</h2>
+            <div class="section4InnerMainDiv">
+                <div class="section4InnerDiv d-flex">
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading"> Industry Expertise</h3>
+                        <p class="section4InnerDivText">Our team of seasoned professionals understands the unique challenges of diverse industries. Whether you're in finance, retail, healthcare, or manufacturing, we deliver EPM solutions that align with your specific needs. </p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Tailored Solutions</h3>
+                        <p class="section4InnerDivText">At LightIdea, we believe one size does not fit all. We design, implement, and optimize Oracle EPM solutions tailored to your organization's goals and workflows. </p>
+                    </div>
+                </div>
+                <div class="section4InnerDiv d-flex">    
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">End-to-End Support </h3>
+                        <p class="section4InnerDivText">From initial consultation to implementation and ongoing support, our team ensures a seamless experience throughout your EPM journey. We don't just deliver solutions; we partner with you to achieve lasting success. </p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Innovation at the Core</h3>
+                        <p class="section4InnerDivText">Our commitment to innovation drives us to stay ahead of the curve. With LightIdea, you gain access to cutting-edge tools and methodologies that redefine what's possible with Oracle EPM. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section8" >
+        <div class="d-flex">
+            <div class="section8section">
+                <h2 class="section8Heading">Get Started with LightIdea</h2><br>
+                <p class="section8Text">Ready to revolutionize your enterprise performance management? Let LightIdea guide you every step of the way. Contact us today to schedule a consultation and explore how Oracle EPM solutions can drive your business forward. </p>
+            
+            </div>
+        </div>
+    </section>
+    <section class="section6">
+        <div class="footer1"><br><br>
+            <img id="lilogo" src="../assets/demo/lilogo.png"><br><br>
+            <h2>Start Your Transformation Journey</h2>
+            <p>Lightidea is here to help you navigate the complexities of digital <br>transformation.</p>
+        </div>
+    </section>
+    <section class="section7">
+        <div class="footer2"><br><br>
+            <p class="footer2P">Let's collaborate</p>
+            <p class="footer2P">to unlock your organization's potential.</p><br>
+            <h3>Contact us</h3><br>
+            <div class="d-flex">
+                <div class="footer2contactDetails">
+                    <p class="footer2P"><span class="footerContactBtn"><img src="../assets/demo/call.png">&nbsp; +971 543 711199</span></p>
+                    <p class="footer2P"><span class="footerContactBtn"><img src="../assets/demo/message.png">&nbsp; info@lightidea.com</span></p>
+                </div>
+                <div class="footer2contactText">
+                    <p>Discover how we can <br>
+                        empower your business<br>
+                        www.lightidea.org
+                    </p>
+                </div>                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

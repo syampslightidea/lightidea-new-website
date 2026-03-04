@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>Register</title>
+    <style>
+        .t-Region-title{
+            padding:10px;
+            font-size:1.5rem;
+        }
+        .t-Footer{display:none;}
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        #pageInput{
+            width: 100%;
+            height: 130px;
+        }
+    </style>
+</head>
+<body><br>
+    <label>Add Blog Body</label><br>
+<input type="text" id="pageInput"><br><br>
+<button id="addHeader" onClick="addHeading(event)"> Add as Heading</button>
+<button id="addPara" onClick="addParagraph(event)">Add as Paragraph </button>  
+<button id="blogDataId" onclick="showDataText(event)">show body Preview</button>  
+<button id="blogDataId" onclick="hideDataText(event)">Hide body Preview</button>
+<button id="blogDataId" onclick="clearDataText(event)">Clear Body</button>      
+<br><br>
+<p id="blogDataText"></p>
+<p id="blogDataText2"></p>
+<script>
+    var blogData ="";
+    var blogData1 ="";
+    var headingData ="";
+    var paraData ="";
+    function addHeading(){
+        event.preventDefault()
+        headingData =  document.getElementById("pageInput").value;
+        if(blogData.length < 3300)
+        {
+            blogData = blogData + `<h1>${headingData}</h1>`;
+            apex.item("P20_BODY1").setValue(blogData);
+        }
+        else if(blogData.length >= 3300)
+        {
+            blogData1 = blogData1 + `<h1>${headingData}</h1>`;
+            apex.item("P20_BODY2").setValue(blogData1); 
+        }
+        document.getElementById("pageInput").value ="";    
+    }
+    function addParagraph(){
+        event.preventDefault()
+        paraData =   document.getElementById("pageInput").value;
+        if(blogData.length < 3300)
+        {
+            blogData = blogData + `<p>${paraData}</p>`;
+            apex.item("P20_BODY1").setValue(blogData);
+        } 
+        else if(blogData.length >= 3300)
+        {
+            blogData1 = blogData1 + `<p>${paraData}</p>`;
+            apex.item("P20_BODY2").setValue(blogData1);
+        }    
+        document.getElementById("pageInput").value ="";
+    }
+    function showDataText(){
+        event.preventDefault()
+        document.getElementById("blogDataText").innerHTML =blogData;
+        document.getElementById("blogDataText2").innerHTML =blogData1;
+    }
+    function hideDataText(){
+        event.preventDefault()
+        document.getElementById("blogDataText").innerHTML ="";
+        document.getElementById("blogDataText2").innerHTML =blogData1;
+    }
+    function clearDataText(){
+        event.preventDefault()
+       blogData ="";
+       blogData1 ="";
+    }
+</script>
+<br><br>
+</body>
+</html>

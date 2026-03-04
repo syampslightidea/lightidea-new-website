@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightidea</title>
+  <style>  
+   ::-webkit-scrollbar {
+      height: 3px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px #f1f9ff; 
+      border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background:  #f1f9ff; 
+      height:3px
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    }
+    .t-Footer{
+      display:none;
+    }
+    .container{
+      width:100%;
+    }
+    p{
+      line-height: 1.2em;
+    }
+    body,p,h1,h2,h3,h4,h5,h6{
+      font-family: "Poppins", sans-serif;
+    }
+    .banner {
+      position: relative;
+      height: 700px;
+    }
+    .banner-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      z-index: 0;
+      opacity:30%;
+    }
+    .banner-video video {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+      color: #fff;
+      width:80%;
+    }
+    .banner-text h1 {
+      font-size: 6rem;
+      margin-bottom: 20px;
+      color:#006BB4;
+      font-weight:700;
+      background-color: #5cc1cf;
+      background-size: 100%;
+      background-image: linear-gradient(45deg, #5cc1cf, #026cb5);
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+    }
+    .banner-text p {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: black;
+      font-weight: 500;
+    }
+    .banner-text button {
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #0074C4;
+      padding: 22px 50px;
+      border: 0px;
+      color: white;
+      font-weight: 600;
+      background-image: linear-gradient(to right, #33909D, #026cb5);
+      font-size: 2em;
+      margin: 10px 0px;
+      text-decoration: underline;
+    }
+    .section-1{
+      margin-top:-150px;
+      margin-left:5%;
+      margin-right:5%;
+      background-color: #006BB4;
+      border-radius: 25px 25px;
+      background-color: #5cc1cf;
+      background-image: linear-gradient( #ffffff 10%, #026cb5 100%);
+      background-size: 100%;
+      z-index:5;
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    #section1hed1 {
+      padding: 5% 5% 1% 5%; 
+      margin: 0px;
+      font-size: 3em;
+      font-weight: 700;
+      background: linear-gradient(to right, #18488A 20%, #026cb5 70%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .menuIcon  {
+      width: 100px;position: absolute;right: 30px;top: 47%;
+    }
+    #section1p1 {
+      padding: 0% 5% 1% 5%;
+      font-weight: 400;
+      font-size: 1.5em;
+      margin-bottom: 0px;
+    }
+    .section-1-2 {
+      background-color: transparent;
+      margin-left:0%;
+      border-top-left-radius: 25px;
+      padding: 1% 0% 2% 4%;
+      margin-top: 0%;
+    }
+    #section1solution {  
+      color:black;
+      font-size: 2em;
+      font-weight: 600;
+      padding-bottom: 2%;
+    }
+    .section1pDiv {
+      font-size: 1em;
+      border-radius: 18px;
+      color: white;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    }
+    #section1pDivP
+    {
+      font-size :1.5em;
+      line-height: 1.5em;
+    }
+    .d-flex{
+      display: flex;
+    }
+    .solutionMobDiv{
+      overflow-x: auto;
+    }
+    .section1pDiv {
+      width:450px;
+      min-width: 450px;
+      padding: 15px 30px 15px 30px   ;
+      border-radius: 18px;
+      margin-right: 15px;
+      margin-bottom: 20px;
+      height: 230px;;
+    }
+    .section1pDiv.blue{
+      background-color: #026cb5;
+    }
+    .section1pDiv.mint{
+      background-color: #b5f6ff;
+    }
+    .section3{
+        padding:2%;
+        overflow:hidden;
+    }
+    .section3h2 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #006BB4;
+      font-weight: 700;
+      background-color: #5cc1cf;
+      background-image: linear-gradient(to right, #5cc1cf 5%, #026cb5 25%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      width: 100%;
+      display: inline-block;
+      text-align: left;     
+      animation: weeee 6s linear infinite alternate;
+      position: relative;
+    }
+    @keyframes weeee {
+      from {left: 0px;}
+      to {left: 100%;}
+    }
+    .blackBorderLineAbout {
+      width: 20%;
+      height: 2px;
+      margin: 0px 15px;
+    }
+    .section3-2{
+      background-color: #5cc1cf;
+      background-image: linear-gradient( #A2d9ff 40%, #53ccdc 100%);
+      background-size: 100%;
+      padding:5%;
+    }
+    .section3-2-1{
+      width:50%;
+      padding-right:5%;
+    }
+    .section3-2-2{
+      width:50%;
+    }
+    .section3-2-1p{
+      font-size: 2em;
+    }
+    .sliderVideo
+    {
+      width:250px;
+      height:300px;
+    }
+    .sliderSection1-1{
+      width:55%;
+      padding-top:20%;
+    }
+    .sliderSection1-2{
+      width:45%;
+      text-align: center;
+    }
+    .carousel-control, .carousel-control:focus, .carousel-control:hover {
+      color:white!important;
+      opacity:100%;
+      position:relative;
+      background-color: black;
+      border-radius:50%;
+      height: 40px;
+      width: 40px;
+      line-height: 26px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 6px;
+    }
+    .carousel-indicators li {
+      display: inline-block;
+      width: 45px;
+      height: 3px;
+      margin: 1px;
+      text-indent: -999px;
+      cursor: pointer;
+      background-color: grey;
+      border: 1px solid grey;
+      border-radius: 0px;
+    }
+    .carousel-indicators .active {
+    width: 45px;
+    height: 3px;
+    margin:1px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 0px;
+    position:relative!important;
+    }
+    .carousel-indicators {
+    position: relative!important;
+    bottom:0px;
+    padding-top:10px;  
+    left: 0px;
+    z-index: 15;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0px;
+    text-align: left;
+    list-style: none;
+
+    }
+    .sliderconstant{
+    width:50%;
+    padding-top:0%;
+    position:absolute!important;
+    top:30;
+    left:20;
+    z-index: 10;
+    }
+    .countryImg{
+        width:90%;
+    }
+    .sliderSubSectionP{
+        font-size:1.5em;
+    }
+    .sliderSubSectionLi{
+        font-size: 2em;
+    }
+    .section4{
+      background: linear-gradient(to bottom, white 20%, #b9f6ff 60%);
+    }
+    .section4-1{
+      padding:2%;
+      text-align: center;
+      color:white;
+      background-color: #5cc1cf;
+      background-image: linear-gradient( #18486a 40%, #026cb5 100%);
+      background-size: 100%;
+    }
+    .section4-1 h2{
+      background: -webkit-linear-gradient(45deg,#ffffff, #5cc1cf);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+      font-weight: 700;
+      display: inline-block;
+    }
+    .section4-2-1{
+      width:100%;
+      padding:5% 0%;
+    }
+    .section4-2-1 img{
+      border-radius: 25px;
+      width:100%;
+    }
+    .section4-2-1.pic1{
+      width:27%;
+      padding-right:4%;
+    }
+    .section4-2-1.pic2{
+      padding-top:8%;
+      width:46%;
+    }
+    .pic2Hed{
+      color:#006BB4;
+      font-weight:700;
+      background-color: #5cc1cf;
+      background:linear-gradient(to right, #18486a 20%, #5cc1cf 60%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+      padding:0px;
+      padding-bottom:4%;
+      margin:0px;
+      font-size: 3.5em;
+      text-align: center;
+    } 
+    .section4-2-1.pic3{
+      width:27%;
+      padding-left:4%;
+      padding-top:30%;
+    }
+    .section5{
+      padding-right: 2%;
+      padding-left: 2%;
+      background-image: url('#WORKSPACE_FILES#section5Banner.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .section5-1{
+      padding-top:20%;
+    }
+    .section5-1h3{
+      color:#006BB4;
+      font-weight:500;
+      background-color: #5cc1cf;
+      background:linear-gradient(to right, #18486a 20%, #5cc1cf 60%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+      padding:0px;
+      padding-left:2%;
+      margin:0px;
+      font-size: 3.5em;
+      display: inline-block;
+    }
+    .section5-1p{  
+      background: linear-gradient(to right, #18488A 60%, #026cb5 90%);
+      color:#006BB4;
+      font-weight:700;
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-text-fill-color: transparent;
+      padding:0px;
+      padding-left:2%;
+      margin:0px;
+      font-size:1,8em;
+      display: inline-block;
+    }
+    .section5-2{
+      padding:0% 0% 5% 0%;
+    }
+    .epmdiv{
+      padding:1%;
+      width:30%;
+      margin:2%;
+      border-radius:25px;
+      background-color: #5cc1cf;
+      background-image: linear-gradient(#33909D 20%, #026cb5 100%);
+      background-size: 100%;
+      color:white;
+    }
+    .section5-2-3Img{
+      width:20px;
+    }
+    .section5-2-3h3{  
+      font-size: 2.5em;
+      margin-top:10px;  
+    }
+    .section5-2-3p{
+      font-size: 1.3em;
+      text-decoration: underline 
+    }
+    .lilogo{
+      width: 100px;
+      top: 20px;
+      position: relative;
+      left: 20px;
+    }    
+    .loginButton{
+      font-size: 1.5em;
+      color: #0074C4;
+      align-self: center;
+    }
+    .searchIcon{
+      width:20px;
+      margin-right: 20px;
+    }
+    .menuTopList {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .menuListUl{
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+    }
+    .demoMenuButton{
+      border-radius:6px;
+      padding:5px 15px;
+      background-color: #006BB4;
+      color:white;
+      border:0px;
+      margin-right:10px;
+    }
+    .section1-1div{
+      width:80%;
+    }
+    .section1-1divControls1{
+      width:20%;
+      padding-top: 50px;
+    }
+    .section1-1divControls2{
+      display:none;
+    }
+    .carouselDivMain-2{
+      width:30%;
+    }.carouselDivMain-1{
+      width:70%;
+    }
+    @media only screen and (max-width: 600px) 
+    {
+      .banner-text h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+      .menuIcon{      
+        width: 75px;
+        position: absolute;
+        right: 40%;
+        top: 5%;
+      }
+      .d-block{
+        display:block!important;
+      }
+      .section3{
+        overflow: hidden;
+      }
+      .banner-text p{
+        font-size:2em;
+      }
+      .demoMenuButton, .loginButton{
+      display:none;
+      }
+      .menuTopList {
+        position: absolute;
+        right: 20px;
+        top: 50px;
+      }
+      .lilogo {
+        width: 70px;
+        top: 45px;
+        position: relative;
+        left: 20px;
+      }
+      .searchIcon {
+        width: 40px;
+        margin-right: 0px;
+      }
+      .banner-text {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        color: #fff;
+        width: 80%;
+      }
+      .section-1 {
+        margin-top: -48%;
+        background-image:linear-gradient(#ffffff 10%, #7daccd 100%)
+      }
+      .section1-1div{
+        width:100%;
+      }
+      .section1-1divControls2{
+        display:flex;
+        width:30%;
+      }
+      .section-1-1{
+        padding-left:8%;
+      }
+      #section1hed1 {
+        padding :10% 5% 5% 0% ;
+      }
+      #section1p1 {
+        padding: 0% 0% 1% 0%;
+        font-weight: 400;
+        font-size: 1.8em;
+        margin-bottom: 0px;
+      }
+      .section-1-2 {
+        background-color: transparent;
+        margin-left: 0%;
+        border-top-left-radius: 25px;
+        padding: 1% 0% 2% 0%;
+        margin-top: 0%;
+      }
+      .section1pDiv {
+        width: 275px;
+        min-width: 275px;
+        padding: 15px 25px 15px 25px;
+        border-radius: 18px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        height: 162px;
+        overflow: auto;
+        font-size: .8em;
+      }
+      #section1pDivh3{
+        margin-top:5px;
+      }
+      .solutionMobDiv{
+        width:100%;
+        display:flex;
+      }
+      .solutionMobSubDiv{
+        width:70%;
+      }
+      #section1solution {
+        color: black;
+        font-size: 2.5em;
+        font-weight: 600;
+        padding-bottom: 2%;
+      }
+      #scrollLeftSideMob,#scrollRightSideMob{
+        width:45px;
+        height: 45px;
+        margin-top: 18px;
+        margin-right: 5px;
+      }
+      .section1-1divControls1{
+        display:none;
+      }
+      .section3h2{
+        font-size:2rem;
+      }
+      .epmdiv {
+        width: 90%;
+        padding: 10px;
+        margin: 17px 5%;
+      }
+      .section5-2-3h3{
+        font-size:2em;
+      }
+      .section3-2,.section3-2-1,.section3-2-2{
+        width:100%;
+        display: block;
+      }
+      .sliderSection1-1, .sliderSection1-2{
+        width:100%;
+      }
+      .mobile{
+        width:100%;
+        display: block;
+      }
+      .carouselDivMain-2,.carouselDivMain-2{
+      width:100%;
+      }
+      .sliderconstant {
+      width: 100%;
+      padding-top: 10%;
+      position: relative;
+      }
+      .sliderSection1-1 {
+      padding-top: 60%;
+      padding-bottom: 10%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <section class="banner" >
+      <div class="banner-video">
+        <video autoplay loop muted>
+          <source src="#WORKSPACE_FILES#homepagebanner.mp4" type="video/mp4">
+        </video>
+      </div>
+      <img src="#WORKSPACE_FILES#lilogo.png" class="lilogo">
+      <div class="banner-text">
+        <h1>Business is multichannel and 
+          business software should be too</h1>
+          <h1>Business is multichannel and 
+            business software should be too</h1>
+            <h1>Business is multichannel and 
+              business software should be too</h1>
+              <h1>Business is multichannel and 
+                business software should be too</h1>
+                <h1>Business is multichannel and 
+            business software should be too</h1>
+        <p>Transform your business with a cloud-based business management platform that enables streamlining operations and increases efficency</p>
+        <button>Get a free demo</button>
+      </div>
+      <div class="menuTopList">
+        <ul class="menuListUl">
+          <li><img src="#WORKSPACE_FILES#searchIcon.png" class="searchIcon"></li>
+          <li><button class="demoMenuButton">Demo</button></li>
+          <li class="loginButton"> Login</li>
+          </ul>
+      </div>
+      <div><img src="#WORKSPACE_FILES#menuIcon.png"class="menuIcon" ></div>
+    </section>
+  </div>
+    <div class="section-1">
+      <div class="section-1-1">
+        <div class="col-12 d-flex">
+          <div  class="section1-1div">
+            <h3 id="section1hed1">We help you do more with your business</h3>
+            <p id="section1p1">Automate the way you do business with a flexible cloud platform that provides <br>the tools and functionality you need to go from start-up to scale-up</p>  
+          </div>
+          <div class="section1-1divControls1"> 
+            <img src="#WORKSPACE_FILES#leftScroll.png" id="scrollLeftSide">
+            <img src="#WORKSPACE_FILES#rightScroll.png"  id="scrollRightSide">
+            <script>
+              var button = document.getElementById('scrollRightSide');
+              button.onclick = function () {
+                var container = document.getElementById('solutionDiv');
+                sideScroll(container,'right',25,100,10);
+              };
+              var back = document.getElementById('scrollLeftSide');
+              back.onclick = function () {
+                var container = document.getElementById('solutionDiv');
+                sideScroll(container,'left',25,100,10);
+              };
+              function sideScroll(element,direction,speed,distance,step){
+                scrollAmount = 0;
+                var slideTimer = setInterval(function(){
+                    if(direction == 'left'){
+                        element.scrollLeft -= step;
+                    } else {
+                        element.scrollLeft += step;
+                    }
+                    scrollAmount += step;
+                    if(scrollAmount >= distance){
+                        window.clearInterval(slideTimer);
+                    }
+                }, speed);
+              }
+            </script>    
+          </div>
+        </div> 
+        <div class="section-1-2">
+          <div id="">
+            <div class="solutionMobDiv">
+              <div class="solutionMobSubDiv">
+                <h3 id="section1solution">Which solution are you interested in ?</h3>
+              </div>
+              <div class="section1-1divControls2"> 
+                <img src="#WORKSPACE_FILES#leftScroll.png" id="scrollLeftSideMob">
+                <img src="#WORKSPACE_FILES#rightScroll.png" id="scrollRightSideMob">
+                <script>
+                  var button = document.getElementById('scrollRightSideMob');
+                  button.onclick = function () {
+                    var containerMob = document.getElementById('solutionDiv');
+                    sideScrollMob(containerMob,'right',25,100,10);
+                  };
+                  var back = document.getElementById('scrollLeftSideMob');
+                  back.onclick = function () {
+                    var containerMob = document.getElementById('solutionDiv');
+                    sideScrollMob(containerMob,'left',25,100,10);
+                  };
+                  function sideScrollMob(element,direction,speed,distance,step){
+                    scrollAmount = 0;
+                    var slideTimer = setInterval(function(){
+                        if(direction == 'left'){
+                            element.scrollLeft -= step;
+                        } else {
+                            element.scrollLeft += step;
+                        }
+                        scrollAmount += step;
+                        if(scrollAmount >= distance){
+                            window.clearInterval(slideTimer);
+                        }
+                    }, speed);
+                  }
+                </script>    
+              </div>
+            </div>
+          </div>
+          <div class="col-12"> 
+            <div class="col-12">
+              <div class="d-flex solutionMobDiv" id="solutionDiv">
+                <div id="section1pDiv1" class="section1pDiv blue col-3" >
+                  <h3 id="section1pDivh3">Oracle FAW </h3>
+                  <p id="section1pDivP"  style="color:white;">Oracle Fusion Analytics Warehouse empowers customers with industry-leading, AI-powered, self-service analytics capabilities for data preparation, visualization, enterprise reporting, augmented analysis, and natural language processing.</p>
+                </div>
+                <div class="section1pDiv mint col-3"  id="section1pDiv2">
+                  <a href="./epm.php">
+                    <div >
+                      <h3 id="section1pDivh3"style="color:black;">Oracle EPM </h3>
+                      <p id="section1pDivP"style="color:black;">Oracle Cloud Enterprise Performance Management (EPM) Platform is a framework of the technical and functional components shared among Cloud EPM processes. It enables you to have a more unified user experience and simplified administration across different business functions.</p>
+                    </div>
+                  </a>
+                </div>
+                <div id="section1pDiv2" class="section1pDiv col-3" style="background-color:#5cc1cf" >
+                  <h3 id="section1pDivh3"style="color:white;">Oracle HCM </h3>
+                  <p id="section1pDivP"style="color:white;">Oracle Human Capital Management (HCM) is a comprehensive cloud-based solution that optimizes human resource management. It supports talent acquisition, workforce management, and employee engagement throughout the entire employee lifecycle.</p>
+                </div>  
+                <div id="section1pDiv1"class="section1pDiv col-3" style="background-color:#83CCFF">
+                  <h3 id="section1pDivh3"style="color:black;">Oracle ERP </h3>
+                  <p id="section1pDivP"  style="color:black;">Oracle Fusion Cloud ERP is a complete, modern, cloud ERP suite that provides your teams with advanced capabilities, such as AI to automate the manual processes that slow them down, analytics to react to market shifts in real time, and automatic updates to stay current and gain a competitive advantage.</p>
+                </div>
+              </div>   
+            </div>
+          </div>  
+        </div>  
+      </div>
+    </div>
+    <div class="section3">
+      <h2 class="section3h2"><img src="#WORKSPACE_FILES#line2.png" class="blackBorderLineAbout"> about lightidea <img src="#WORKSPACE_FILES#line2.png" class="blackBorderLineAbout"> </h2>
+    </div>
+    <div class="section3-2 d-flex mobile">
+      <div class="section3-2-1">
+        <p  class="section3-2-1p"><strong>Lightidea is an Oracle Cloud partner,</strong> 
+          helping its clients to
+          sustainably improve and manage their business
+          performance through the entire management process by
+          developing the business concepts, strategies, implementing
+          proven performance management solution for enterprises
+          providing customized end user and <strong>offering 24*7
+          application support.</strong>
+          <br><br>
+          Lightidea Information Consultancy offers end-to-end system
+          integration services for a host of Oracle business applications.
+          Our pragmatic approach to system integration stems from
+          our extensive implementation experience which is infused with
+          standard project management principles and industry best
+          practices with Oracle unified methodology.
+        </p>
+      </div>
+      <div class="section3-2-2">
+        <div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="sliderconstant">
+                <p class="sliderSubSectionLi">
+                  Lightidea IT Consultancy headquarter
+                  is situated in <strong>
+                  Abu Dhabi with the
+                  development center offices in UAE,
+                  Egypt and operations across MENA</strong>  
+                </p>
+                <br>
+                <div class="d-flex mobile" >
+                  <div class="carouselDivMain-1">
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                  </div>
+                  <div class="carouselDivMain-2">
+                    <span class="leftCarouselImg">
+                      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </span>
+                    <span class="rightCarouselImg">
+                      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </span> 
+                  </div>
+                </div>
+              </div>
+              <div class="item active">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class="sliderSubSection">
+                      <div class="">
+                        <h3> UAE HQ</h3>
+                        <p class="sliderSubSectionP">Office 207, Al Nahyan Camp, Muroor Road,
+                          Abu Dhabi, United Arab Emirates
+                          P.O.BOX 110620
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="#WORKSPACE_FILES#uae.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class="sliderSubSection">
+                      <br>
+                      <div class="">
+                        <h3>Saudi Arabia HQ</h3>
+                        <p class="sliderSubSectionP">3929 Muhammed Ali Genah،
+                          7443, Ghirnatah, Riyadh 13242, Saudi Arabia</p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="#WORKSPACE_FILES#saudiarabia.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class="sliderSubSection">        
+                      <br>
+                      <div class="">
+                        <h3>India</h3>
+                        <p class="sliderSubSectionP">Office 595, 3rd Floor, CREA Apartment, Vinayaka
+                          Layout, Nagarabhavi 2nd Stage, Opposit Bisi Bisi Tindi, Bengaluru - 560 072.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="#WORKSPACE_FILES#india.gif"class="countryImg">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class="sliderSubSection"><br>
+                      <div class="">
+                        <h3>Egypt</h3>
+                        <p class="sliderSubSectionP">8 Amayer El Taameer - Sheraton -
+                          Misr aljadida, Egypt</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                   <img src="#WORKSPACE_FILES#egypt.gif"class="countryImg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="section4">
+    <div class="section4-1">
+      <h2>What we do</h2>
+    </div>
+    <div class="section4-2 d-flex">
+      <div class="section4-2-1 pic1">
+        <img src="#WORKSPACE_FILES#section4imgleft.png" style="border-top-left-radius: 0px;border-bottom-left-radius: 0px;opacity: 30%;">
+      </div>
+      <div class="section4-2-1 pic2">
+        <h3 class="pic2Hed"><img src="#WORKSPACE_FILES#line2.png" class="blackBorderLineAbout">  Oracle ERP  <img src="#WORKSPACE_FILES#line2.png" class="blackBorderLineAbout"> </h3>
+        <img src="#WORKSPACE_FILES#section4img.png" style="border:5px solid #006BB4;">
+      </div>
+      <div class="section4-2-1 pic3">
+        <img src="#WORKSPACE_FILES#section4imgright.png" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px;opacity: 30%;">
+      </div>  
+    </div>
+  </div>
+  <div class="section5">
+    <div class="section5-1">
+      <h2 class="section5-1h3">Top 3 reasons to choose</h2><br><br>
+      <h2 class="section5-1p">Oracle Cloud EPM</h2>
+    </div>
+    <div class="section5-2 d-flex d-block">
+      <div class="section5-2-1 epmdiv d-flex">
+          <div>
+              <img class="section5-2-3Img"  src="#WORKSPACE_FILES#icon1.png" style="margin:0px 15px;width:20px;height:60px;">
+          </div>
+          <div>
+            <h3 class="section5-2-3h3">Breadth and depth</h3>
+            <p class="section5-2-3p">Know more</p>
+          </div>
+        </div>
+        <div class="section5-2-2 epmdiv d-flex">
+          <div>
+            <img class="section5-2-3Img" src="#WORKSPACE_FILES#icon2.png" style="margin:0px 15px;width:55px;height:60px;">
+          </div>
+          <div>
+            <h3 class="section5-2-3h3">Flexible deployment</h3>
+            <p class="section5-2-3p">Know more</p>
+          </div>
+        </div>
+        <div class="section5-2-3 epmdiv d-flex">
+          <div>
+            <img class="section5-2-3Img" src="#WORKSPACE_FILES#icon3.png" style="margin:0px 15px;width:65px;height:60px;">
+          </div>
+          <div>
+            <h3 class="section5-2-3h3">integration and security</h3>
+            <p class="section5-2-3p">Know more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

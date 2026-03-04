@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>E Business Suite</title>
+    <style>
+        .row .col.col-end {
+            padding-inline-end: var(--ut-grid-gutter-width, 0px);
+        }
+        .row .col.col-start {
+            padding-inline-start: var(--ut-grid-gutter-width, 0px);
+        }
+        ::-webkit-scrollbar {height: 3px;}
+        ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px #f1f9ff;border-radius: 2px;}
+        ::-webkit-scrollbar-thumb {background:#f1f9ff;height:3px;}
+        .t-Footer{display:none;}
+        .container{width:100%;}
+        p{line-height: 2.5rem;}
+        li{line-height: 2.5rem;font-size:1.6rem;}
+        .section3Text {
+            padding-bottom: 2%;
+            padding-right: 30%;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .imageDivText {
+            display: none;
+            padding-right: 5px;
+            font-size: 1.6rem;
+        }
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        .section3ImgDiv::-webkit-scrollbar {
+            display: none;
+        }
+        .section3ImgDiv {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .d-flex{
+            display: flex;
+        }
+        section{
+            padding:2% 10%;
+        }
+        .scaleImage{
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+        .scaleImage:hover
+        {
+            box-shadow: 0px 0px 10px #444;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+        .textDiv1,.imageDiv1{
+            width:50%;
+        }
+        .textDiv1{
+            margin: auto;
+        }
+        .imageDiv1 img{
+            width:100%;
+            height: 450px;
+            margin:auto;
+        }
+        .section1{
+            padding: 5% 10%;
+            background-color: #D9D9D9;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0 0 0 / 90%)), url(#WORKSPACE_FILES#ebusinesssuite/ebusinessuiteBanner.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: left;
+        }
+        .bannerHeading{
+            font-size:6rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .bannerText{
+            font-size: 1.7rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .section2Heading,.section5Heading{    
+            font-size: 5rem;
+            color: #3594D6;
+            text-decoration: underline;
+            text-underline-offset: 30px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #B5BDC1;
+        }
+        .textDiv1 ul{
+            font-weight: 500;
+            font-size: 1.6rem;   
+        }
+        .textDiv1Text{
+            padding-top: 5%;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .textDiv1Heading{
+            font-size:4rem;
+        }
+        .leftDiv{
+            padding-right:20px;
+        }
+        .rightDiv{
+            padding-left:20px;
+        }
+        .section3Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section3Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section3Image :first-child{
+            border-left:0px;
+        }
+        .section3Image{
+            border-left: 1px solid black;
+            height: 250px;
+            width: 100%;
+        }
+        .imgMainDiv{
+            width:25%;
+            overflow:hidden;
+        }
+        .section3ImgDiv{
+            width:100%;
+            overflow:scroll;
+        }
+        .imgMainDiv:hover{
+            width:50%;
+        }
+        .imageDivText{
+            display:none;
+        }
+        .imgMainDiv:hover .imageDivText{
+            display:block;
+            padding-left:10px;
+        }
+        .imgMainDiv:hover h2{
+            font-size:3rem;
+            font-weight: 700;
+            padding-left:10px;
+        }
+        .section4{
+            background-color: #D7DFE4;
+            margin: 0% 5%;
+            padding: 5%;
+        }
+        .section4Heading{
+            font-size: 6rem;
+            color: #026CB5; 
+            padding-bottom:20px;
+            font-weight: 400;
+        }
+        .section4InnerMainDiv{
+            padding-right: 10%;
+        }
+        
+        .section4InnerDivHeading{
+            font-weight: 700;
+            font-size: 3rem;
+            padding-bottom: 15px;
+        }
+        .section4InnerDivText{
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .section4InnerSubDiv{
+            padding-right:5%;
+            width:50%;
+        }
+        .imageDiv1{
+            margin-bottom:30px;
+        }
+        .section6{
+            background-color: #CEEBFF;
+        }
+        .section7{
+            background-color: #0E2D3D;
+            color:#fff;
+        }
+        #lilogo{
+            width: 150px;
+        }
+        .footer1 h2{
+            font-size: 4rem;
+            font-weight: 700; 
+        }
+        .footer1 p{
+            font-size: 1.8rem;
+            font-weight: 500; 
+        }
+        .footer2P{
+            font-size: 1.8rem;
+            font-weight: 400; 
+        }
+        .footer2 h3{
+            font-size: 3rem;
+            font-weight: 600;
+        }.footer2contactDetails{
+            padding:0% 10% 5% 0%
+        }    
+        .section8Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section8Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section8{
+            padding:3% 5%;
+        }
+        .section8section1{
+            width:50%;
+            padding-right:5%;
+        }
+        .section8section2{
+            width:50%;
+            padding-left:5%;
+        }
+        .imageDiv1Mobile{
+            display:none;
+        }
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 4rem;
+            }
+            .bannerText {
+                font-size: 1.5rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 3rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
+            .leftDiv {
+                padding-right: 10px;
+            }
+            .section3Heading {
+                font-size: 3rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1 img {
+                width: 100%;
+                height: 400px;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 5px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+        }
+        @media  (max-width: 501px) { 
+            .d-flex{
+                display: block;
+            }
+            .textDiv1, .imageDiv1 {
+                width:100%;
+            }
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 2.5rem;
+            }
+            .bannerText {
+                font-size: 1.2rem;
+            }
+            .section2Heading{
+                text-decoration: none;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 0px;
+            }
+            .leftDiv,.rightDiv {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            .section3Heading {
+                
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv {
+                width: 100%;
+            }
+            .imgMainDiv:hover {
+                width: 100%;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1Mobile {
+                display: block;
+                margin-bottom: 10%;
+            }
+            .imageDiv1Desk{
+                display:none;
+            }
+            .imageDiv1Mobile img , .imageDiv1 img {
+                width: 100%;
+                height: unset;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 0px;
+            }
+            .section4Heading {
+                font-size: 2.5rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.2rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+            #lilogo {
+                width: 80px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+            .footer2contactText p {
+                font-size: 1.2rem;
+            }
+            .footer2 h3 {
+                margin-top: -10px;
+                margin-bottom:-5px;
+            }
+            .section8Heading {
+                font-size: 3rem;
+                color: #3594D6;
+            }
+            .section8Text {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .imageDiv1{
+                margin-bottom: 10%;
+            }
+            .section4InnerSubDiv {
+                width: 100%;
+            }
+            .section4InnerDivHeading {
+                padding-bottom: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <div>
+            <div>
+                <h1 class="bannerHeading">Empowering Businesses with <br>Oracle E-Business Suite</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div>
+            <h2 class="section2Heading">Our E-Business Suite Services</h2>
+        </div>
+        <br><br>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Financial Management</h2>
+                <p class="textDiv1Text">Streamline your financial operations with LightIdea's expertise in Oracle EBS Financials. Our services include:  
+                    <ul>
+                        <li>General ledger management.</li>
+                        <li>Accounts payable and receivable automation.</li>
+                        <li>Financial reporting and analytics.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage"src="#WORKSPACE_FILES#ebusinesssuite/financialManagement.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage" src="#WORKSPACE_FILES#ebusinesssuite/scm.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Supply Chain Management</h2>
+                <p class="textDiv1Text">Optimize your supply chain with solutions designed for efficiency and cost-effectiveness. We specialize in:  
+                    <ul>
+                        <li>Inventory and procurement management.</li>
+                        <li>Order processing and logistics optimization.</li>
+                        <li>Demand planning and supply chain visibility.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage" src="#WORKSPACE_FILES#ebusinesssuite/scm.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Human Resource Management</h2>
+                <p class="textDiv1Text">Enhance your HR processes with Oracle EBS HCM solutions implemented by LightIdea. Our focus areas include:
+                    <ul>
+                        <li>Employee recruitment and onboarding.</li>
+                        <li>Payroll and benefits management.</li>
+                        <li>Performance tracking and talent management.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#ebusinesssuite/hrm.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="imageDiv1 leftDiv imageDiv1Desk">
+                <img class="scaleImage"  src="#WORKSPACE_FILES#erp/projectManagement.jpg">
+            </div>
+            <div class="textDiv1 rightDiv">
+                <h2 class="textDiv1Heading">Customer Relationship Management (CRM)</h2>
+                <p class="textDiv1Text">Improve customer engagement and satisfaction with tailored CRM solutions. Our offerings include: 
+                    <ul>
+                        <li>Customer data management.</li>
+                        <li>Personalized service and support solutions.</li>
+                        <li>Sales and marketing automation.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1Mobile">
+                <img class="scaleImage"  src="#WORKSPACE_FILES#erp/projectManagement.jpg">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="textDiv1 leftDiv">
+                <h2 class="textDiv1Heading">Project Management</h2>
+                <p class="textDiv1Text">Manage complex projects with ease using Oracle EBS Project Management tools. We provide:  
+                    <ul>
+                        <li>Project planning and scheduling. </li>
+                        <li>Budgeting and resource allocation. </li>
+                        <li>Risk assessment and performance tracking. </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="imageDiv1 rightDiv">
+                <img class="scaleImage" src="#WORKSPACE_FILES#ebusinesssuite/projectManagement.jpg">
+            </div>
+        </div>
+    </section>
+    <section class="section3">
+        <div>
+            <h2 class="section3Heading">About Lightidea</h2><br>
+            <p class="section3Text">At LightIdea, we specialize in delivering IT consultancy services that drive business transformation. With a strong focus on Oracle E-Business Suite (EBS), we help organizations optimize their operations, improve decision-making, and achieve sustainable growth. Our expertise, coupled with a client-centric approach, ensures that we provide solutions tailored to your unique business needs.   
+            </p><br><h2 class="section3Heading">How LightIdea Delivers Value </h2><br>
+        </div>
+        <div class="d-flex section3ImgDiv">
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"style="border:0px;" src="#WORKSPACE_FILES#erp/discovery.jpg">
+                    <h2>Discovery and Analysis</h2>
+                    <p class="imageDivText">We begin by understanding your business goals, challenges, and existing processes to identify opportunities for improvement. </p>
+                </div>
+            </div>
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="#WORKSPACE_FILES#erp/planning.jpg">
+                    <h2>Strategic Planning</h2>
+                    <p class="imageDivText">Our experts design a roadmap tailored to your organization's needs, ensuring that Oracle EBS applications integrate seamlessly into your workflows. </p>
+                </div>
+            </div>            
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image" src="#WORKSPACE_FILES#erp/implementation.jpg">
+                    <h2>Implementation and Integration </h2>
+                    <p class="imageDivText">LightIdea's certified consultants execute the implementation with precision, minimizing disruption and maximizing efficiency. </p>
+                </div>
+            </div>   
+            <div class="imgMainDiv">
+                <div class="imgDiv">
+                    <img class="section3Image"src="#WORKSPACE_FILES#ebusinesssuite/trainingSupport.jpg">
+                    <h2>Training and Support</h2>
+                    <p class="imageDivText">We provide comprehensive training for your team and ongoing support to ensure long-term success and continuous improvement. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div>
+            <h2 class="section4Heading">Why LightIdea Stands Out ?</h2>
+            <div class="section4InnerMainDiv">
+                <div class="section4InnerDiv d-flex">
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Unmatched Expertise</h3>
+                        <p class="section4InnerDivText">With years of experience in IT consultancy, our team is adept at addressing the complexities of enterprise resource planning (ERP) systems. We provide solutions that align with your business objectives and industry standards. </p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Customized Solutions</h3>
+                        <p class="section4InnerDivText">LightIdea's approach is centered around your organization. We design and implement Oracle E-Business Suite applications that cater specifically to your requirements, ensuring seamless integration and maximum efficiency. </p>
+                    </div>
+                </div>
+                <div class="section4InnerDiv d-flex">    
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Comprehensive Support</h3>
+                        <p class="section4InnerDivText">From initial consultation to post-implementation maintenance, LightIdea offers end-to-end support, ensuring your systems run smoothly and adapt to evolving business needs. </p>
+                    </div>
+                    <div class="section4InnerSubDiv">
+                        <h3 class="section4InnerDivHeading">Innovation-Driven Approach</h3>
+                        <p class="section4InnerDivText">Our commitment to leveraging the latest technologies ensures that your business remains ahead of the curve, with scalable and future-proof solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section8" >
+        <div class="d-flex">
+            <div class="section8section">
+                <h2 class="section8Heading">Let's Build Your Future Together </h2><br>
+                <p class="section8Text">At LightIdea, we're not just providing IT solutions; we're enabling your business to reach new heights. Contact us today to learn how Oracle E-Business Suite and our expertise can transform your organization. </p>
+            </div>
+        </div>
+    </section>
+    <section class="section6">
+        <div class="footer1"><br><br>
+            <img id="lilogo" src="#WORKSPACE_FILES#common/lilogo.png"><br><br>
+            <h2>Start Your Transformation Journey</h2>
+            <p>Lightidea is here to help you navigate the complexities of digital <br>transformation.</p>
+        </div>
+    </section>
+    <section class="section7">
+        <div class="footer2"><br><br>
+            <p class="footer2P">Let's collaborate</p>
+            <p class="footer2P">to unlock your organization's potential.</p><br>
+            <h3>Contact us</h3><br>
+            <div class="d-flex">
+                <div class="footer2contactDetails">
+                    <p class="footer2P"><span class="footerContactBtn"><img src="#WORKSPACE_FILES#common/call.png">&nbsp; +971 543 711199</span></p>
+                    <p class="footer2P"><span class="footerContactBtn"><img src="#WORKSPACE_FILES#common/message.png">&nbsp; info@lightidea.com</span></p>
+                </div>
+                <div class="footer2contactText">
+                    <p>Discover how we can <br>
+                        empower your business<br>
+                        www.lightidea.org
+                    </p>
+                </div>                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

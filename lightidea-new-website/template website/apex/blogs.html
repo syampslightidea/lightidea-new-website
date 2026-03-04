@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <title>Blogs</title>
+    <style>
+        .a-TMV-body{
+            padding:2% 5%;
+        }
+        .row .col.col-end {
+            padding-inline-end: var(--ut-grid-gutter-width, 0px);
+        }
+        .row .col.col-start {
+            padding-inline-start: var(--ut-grid-gutter-width, 0px);
+        }
+        ::-webkit-scrollbar {height: 3px;}
+        ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px #f1f9ff;border-radius: 2px;}
+        ::-webkit-scrollbar-thumb {background:#f1f9ff;height:3px;}
+        .t-Footer{display:none;}
+        .container{width:100%;}
+        p{line-height: 2.5rem;}
+        li{line-height: 2.5rem;font-size:1.2rem;}
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        .section3ImgDiv::-webkit-scrollbar {
+            display: none;
+        }
+        .section3ImgDiv {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .d-flex{
+            display: flex;
+        }
+        section{
+            padding:2% 10%;
+        }
+        .scaleImage{
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+        .scaleImage:hover
+        {
+            box-shadow: 0px 0px 10px #444;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+        .textDiv1,.imageDiv1{
+            width:50%;
+        }
+        .textDiv1{
+            margin: auto;
+        }
+        .imageDiv1 img{
+            width:100%;
+        }
+        .section1{
+            padding: 5% 10%;
+            background-color: #D9D9D9;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0 0 0 / 90%)), url(#WORKSPACE_FILES#blogs/blogsBanner.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: left;
+        }
+        .bannerHeading{
+            font-size:6rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .bannerText{
+            font-size: 1.7rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .section2Heading,.section5Heading{    
+            font-size: 5rem;
+            color: #3594D6;
+            text-decoration: underline;
+            text-underline-offset: 30px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #B5BDC1;
+        }
+        .textDiv1 ul{
+            font-weight: 500;
+            font-size: 1.6rem;   
+        }
+        .textDiv1Text{
+            padding-top: 5%;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .textDiv1Heading{
+            font-size:4rem;
+        }
+        .leftDiv{
+            padding-right:20px;
+        }
+        .rightDiv{
+            padding-left:20px;
+        }
+        .section4{
+            background-color: #D7DFE4;
+            margin: 0% 5%;
+            padding: 5%;
+        }
+        .section4Heading{
+            font-size: 6rem;
+            color: #026CB5; 
+            padding-bottom:20px;
+            font-weight: 400;
+        }
+        .section4InnerMainDiv{
+            padding-right: 10%;
+        }
+        .section4InnerDivHeading{
+            font-weight: 700;
+            font-size: 3rem;
+            padding-bottom: 15px;
+        }
+        .section4InnerDivText{
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .section4InnerSubDiv{
+            padding-right:5%;
+        }
+        .imageDiv1{
+            margin-bottom:30px;
+        }
+        .section6{
+            background-color: #CEEBFF;
+        }
+        .section7{
+            background-color: #0E2D3D;
+            color:#fff;
+        }
+        #lilogo{
+            width: 150px;
+        }
+        .footer1 h2{
+            font-size: 4rem;
+            font-weight: 700; 
+        }
+        .footer1 p{
+            font-size: 1.8rem;
+            font-weight: 500; 
+        }
+        .footer2P{
+            font-size: 1.8rem;
+            font-weight: 400; 
+        }
+        .footer2 h3{
+            font-size: 3rem;
+            font-weight: 600;
+        }.footer2contactDetails{
+            padding:0% 10% 5% 0%
+        }
+        .footer2contactText p {font-size:1.6rem;}   
+        .section8Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section8Text{
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section8{
+            padding:5%;
+        }
+        .section8section1{
+            width:50%;
+            padding-right:5%;
+        }
+        .section8section2{
+            width:50%;
+            padding-left:5%;
+        }
+        .imageDiv1Mobile{
+            display:none;
+        }
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 4rem;
+            }
+            .bannerText {
+                font-size: 1.5rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
+            .leftDiv {
+                padding-right: 10px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1 img {
+                width: 100%;
+                height: 400px;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 5px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+        }
+        @media  (max-width: 501px) { 
+            .d-flex{
+                display: block;
+            }
+            .textDiv1, .imageDiv1 {
+                width:100%;
+            }
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 2.5rem;
+            }
+            .bannerText {
+                font-size: 1.2rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 0px;
+            }
+            .leftDiv,.rightDiv {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv {
+                width: 100%;
+            }
+            .imgMainDiv:hover {
+                width: 100%;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1Mobile {
+                display: block;
+                margin-bottom: 10%;
+            }
+            .imageDiv1Desk{
+                display:none;
+            }
+            .imageDiv1Mobile img , .imageDiv1 img {
+                width: 100%;
+                height: unset;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 0px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.2rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+            #lilogo {
+                width: 80px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+            .footer2contactText p {
+                font-size: 1.2rem;
+            }
+            .footer2 h3 {
+                margin-top: -10px;
+                margin-bottom:-5px;
+            }
+            .section8Heading {
+                font-size: 3rem;
+                color: #3594D6;
+            }
+            .section8Text {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .imageDiv1{
+                margin-bottom: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <div>
+            <div>
+                <h1 class="bannerHeading">Lightidea IT - Blogs</h1>
+                <p class="bannerText">Welcome to the LightIdea IT Consultancy blog! Here, we share insights, updates, and expert opinions on the latest trends in the IT world. Whether you're a seasoned professional or a tech enthusiast, our blog is your go-to resource for staying informed and inspired.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section8" >
+    <div class="d-flex">
+        <div class="section8section">
+            <h2 class="section8Heading">Our Blogs</h2><br>
+            <p class="section8Text">At LightIdea, we pride ourselves on providing cutting-edge IT solutions and insightful guidance. Our blog serves as a space where our consultants, industry experts, and tech enthusiasts share knowledge, tips, and strategies that can help your business grow and thrive in the digital age.
+            </p>
+        </div>
+    </div>
+    </section>
+  <section 
+        <h2 class="section8Heading" style="padding: 1% 5% 0% 5%">Recent Blogs</h2>

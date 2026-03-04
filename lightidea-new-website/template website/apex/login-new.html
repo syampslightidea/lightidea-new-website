@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <style>
+        .t-Login-region{
+            width:80%;
+        }
+    body{padding-top:10%}
+      .row .col.col-end {
+            padding-inline-end: var(--ut-grid-gutter-width, 0px);
+        }
+        .row .col.col-start {
+            padding-inline-start: var(--ut-grid-gutter-width, 0px);
+        }
+        ::-webkit-scrollbar {height: 3px;}
+        ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px #f1f9ff;border-radius: 2px;}
+        ::-webkit-scrollbar-thumb {background:#f1f9ff;height:3px;}
+        .t-Footer{display:none;}
+        .container{width:100%;}
+        p{line-height: 2.5rem;font-size:1.8rem;}
+        li{line-height: 2.5rem;font-size:1.6rem;}
+        label {
+            font-size: 1.5rem;
+        }
+        input{
+            font-size: 1.5rem;}   
+    body,p,h1,h2,h3,h4,h5,h6{
+        font-family: "Poppins", sans-serif;
+    }
+    .section3ImgDiv::-webkit-scrollbar {
+        display: none;
+    }
+    .section3ImgDiv {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .d-flex{
+        display: flex;
+    }
+        .loginBody {
+        width:100vw;
+        height:100vh;
+        background: url('#WORKSPACE_FILES#loginreg/loginBackground.jpg') ; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        color:white;
+    }
+    #singinMainDiv{
+        width:100vw;
+        height:100vh;
+        background: url('#WORKSPACE_FILES#loginreg/loginBackground.jpg') ; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position:top;
+        color:black;
+        padding:10%;
+    }
+    .signinRightDiv{
+        background-color:#B3D3E9;
+        padding:5% 5%;
+    }
+    .signinLeftDiv{
+        background-color:white;
+        padding:5% 5%;
+    }
+    input[type=text], input[type=password]{
+        width: 75%;
+        padding: 8px;
+        margin:10px 0px;
+    }
+    input[type=button],input[type=submit],.signupButton{
+        width:45%;
+        padding:10px;
+        background-color:#006CB6;
+        color:white;
+        margin-top:10px;
+        border:none;
+        font-size: 1.5rem;
+    }
+    section{
+        padding:2% 10%;
+    }
+    .section6{
+        background-color: #CEEBFF;
+    }
+    .section7{
+        background-color: #0E2D3D;
+        color:#fff;
+    }
+    #lilogo{
+        width: 150px;
+    }
+    .footer1 h2{
+        font-size: 3rem;
+        font-weight: 700; 
+    }
+    .footer1 p{
+        font-size: 1.8rem;
+        font-weight: 500; 
+    }
+    .footer2P{
+        font-size: 1.8rem;
+        font-weight: 400; 
+    }
+    .footer2 h3{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    .footer2contactDetails{
+        padding:0% 10% 5% 0%
+    }
+    @media only screen and (max-width: 800px) 
+    {
+        #singinMainDiv{
+            background: url('#WORKSPACE_FILES#loginreg/loginBackground.jpg') ; 
+        }
+        dl, ol, ul {
+            padding-left: 18px;
+        }
+        input[type=text], input[type=password]{
+            width: 100%;
+            padding: 8px;
+            margin:10px 0px;
+        }
+        input[type=submit],.signupButton{
+            width:50%;
+            padding:10px;
+            background-color:#006CB6;
+            color:white;
+            margin-top:10px;
+            border:none;
+        }
+        #singinMainDiv{
+            padding:5%;
+            height:100%;
+        }
+        .outline-grey-div {
+            margin-left: 65px;
+        }
+        #bannerSection1st{
+            padding-top:30%!important;
+        }
+        iframe{
+            width:100%;
+        }
+        #section2 h3 {
+            padding: 5%;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .tablink {
+            width:100%;
+        }
+        #tabcontentImage{
+            width: 100%;
+            padding: 0% 15%;
+        }
+        #connectWith h3 {
+            text-align: left;
+        }
+        #footerMenu {
+            padding: 0;
+            font-size: 1rem;
+        }
+        .dflexy{
+            display:block!important;
+        }
+        p{
+            font-size:1em;
+        }
+        .signinRightDiv, .signinLeftDiv {
+            width:100%!important;
+            padding:10%!important;
+            margin:0px!important;
+            position: unset!important;
+            max-width:100%;
+        }
+        .mobile{
+            width:100%!important;
+            padding:2% 5%!important;
+            margin:0px!important;
+            position: unset!important;
+            max-width:100%;
+        }
+        .m-hide {
+            display:none;
+        }
+        .center,#whyNetsuiteImg{
+            justify-content: center;
+            text-align:center;
+            padding-bottom:20px;
+        }
+        .d-block {
+            width:100%!important;
+            display:block!important;
+        }
+        h1, h2 {
+            font-size:1.5rem!important;
+        }
+        .mobile-text{
+            font-size:1.2rem!important;
+        }
+        .carousel-item {
+            padding-top:0% !important;
+        }
+        .getStarted{
+            padding: 10px 37px;
+        }
+        .footer1 h2 {
+            font-size: 3rem;
+        }
+        .footer1 p {
+            font-size: 1.5rem;
+        }
+        .footer2P {
+            font-size: 1.4rem;
+        }
+        #lilogo {
+            width: 150px;
+            margin-top: -25px;
+            margin-bottom: -25px;
+        }
+    }     
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="signinRightDiv col-6 ">
+            <h1 style="font-size:2rem;">Create a profile</h1>
+            <p style="font-weight:600">Get the most from Lightidea.</p>
+            <ul>
+                <li>Get alerts for promotions and events.</l1>
+                <li>Save, download, and print unlimited articles.</li>
+                <li>See personalized content that fits your industry.</li>
+            </ul>
+            <a target="_blank" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/register1"> <a target="_blank" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/register1"> <input type="button"name="" class="lightideaButtons" value="Register"></a>
+        </div>
+            <div class="signinLeftDiv col-6  ">
+            <h1 style="font-size:2rem;">LI Apps Login</h1>
+            <br>
+            <p style="margin-bottom: 28px;">Login into Lightidea Timesheet application</p><br><br><br><br> <a target="_blank" href="https://apps.lightidea.org/ords/r/timesheet/li"> <input type="button"name="" class="lightideaButtons" value="login"></a>
+        </div>
+     </div>   

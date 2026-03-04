@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who we are</title>
+    <style>
+      ::-webkit-scrollbar {
+        height: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #f1f9ff; 
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background:  #f1f9ff; 
+        height:3px
+      }
+      ::-webkit-scrollbar-thumb:hover {
+      }
+      .t-Footer{
+        display:none;
+      }
+      .container{
+        width:100%;
+      }
+      p{
+        line-height: 1.2em;
+      }
+      body,p,h1,h2,h3,h4,h5,h6{
+        font-family: "Poppins", sans-serif;
+      }
+      .d-flex{
+        display:flex;
+      }
+      .banner {
+        position: relative;
+        height: 700px;
+      }
+      .banner-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: 0;    
+        background-image: url(./assets/whoweare/whowerareBanner.webp);
+        background-position: center;
+        background-repeat: round;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .banner-text {
+        position: absolute;
+        top: 94%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        color: #fff;
+        width:80%;
+      }
+      .banner-text h1 {
+        font-size: 6rem;
+        margin-bottom: 20px;
+        color:#006BB4;
+        font-weight:700;
+        background-color: #5cc1cf;
+        background-size: 100%;
+        background-image: linear-gradient(45deg, #5cc1cf, #026cb5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+      }
+      .banner-text p {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        color: black;
+        font-weight: 500;
+      }
+      .banner-text button {
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #0074C4;
+        padding: 22px 50px;
+        border: 0px;
+        color: white;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #33909D, #026cb5);
+        font-size: 2em;
+        margin: 10px 0px;
+        text-decoration: underline;
+      }
+      .section1{
+        color:black;
+        font-size: 1.1em;
+      }
+      .section1-1{
+        width: 49%;
+        text-align: left;
+        padding-right: 1%;
+      }
+      .section1-2{
+        width: 49%;
+        text-align: left;
+        padding-left: 1%;
+      }
+      .section2-1ImgDiv{
+        width:55%;
+      }
+      .rightTextDiv{
+        width: 45%;
+        padding: 3% 5% 2% 0%;
+      }
+      .section2{
+        background-color: lightblue;
+        margin-top: 13%;
+        background-image: linear-gradient(to bottom, #F1F9FF 5%, #cceaff 30%, #ffffff 90%)
+      }
+      .section2-1ImgDiv{
+        margin-left: 15%;
+        margin-top: -4%;
+        background:url('https://i.sstatic.net/NeMfJ.jpg') no-repeat;
+        background: linear-gradient(to top, rgba(255,255,255,1) 50%,rgba(0,0,0,0) 100%);
+        background:transparent;
+      }
+      .section2-1Img{
+        width: 90%;
+        background: linear-gradient(to top, rgba(255,255,255,1) 50%,rgba(0,0,0,0) 100%);
+      }
+      .sec2TextHed{
+        padding-left: 7px;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #1d70c1;
+        margin-top: -1px;
+      }
+      .section2-2-1{
+        width:100%;
+      }
+      .section2-2-1-2,.section2-2-1-1{
+        width:50%;
+      }
+      .section2-2-1-1{
+        padding-right:5%;
+      }
+      .section2-2-1-2{
+        padding-left:5%;  
+        padding-right: 5%;
+      }
+      .section2-2-1-2-2{
+        margin-top: 23%;
+      }
+      .sec2Text{
+        font-size:1.1em;
+        font-weight:500;
+      }
+      .ourVisionDiv{
+        width: 70%;
+        padding: 1% 5%;
+        margin-left: 15%;
+        margin-top: -20%;
+        background-image: linear-gradient(to right,#5CC1CF 5%,#026CB5 100%);
+      }
+      .ourVisionDiv h2{ 
+        font-size: 4em;
+        font-weight: 700;
+        color: white;
+        background-image: linear-gradient(45deg, #F1F9FF, #B5F6FF);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+      .ourVisionDiv p{
+        padding-top: 2%;
+        padding-right: 2%;
+        color: white;
+        font-weight: 600;
+        font-size: 1.5em;
+        padding-bottom: 5%;
+        line-height: 1.5;
+      }
+      .section2imgRight2{  
+        width: 90%;
+        margin-top: -10%;
+        margin-right: 5%;
+        z-index: 1;
+      }
+      .section2imgRight2Img{
+        width: 95%;
+      }
+      .section2-2-1 {
+        width: 100%;
+        padding: 2% 0%;
+      } 
+      .section2-3-1{   
+        width: 100%;
+        padding: 5% 15%
+      }
+      .textDivSec1{
+        padding-bottom:20px;
+      }
+      .ourMissionDiv{  
+        width: 90%;
+        color:black;
+        background-image: linear-gradient(to right,#EAFCFF 5%,#3197A5 100%); 
+        padding: 1% 5%;
+        margin-left: -15%;
+        margin-top: -52%;
+        position: relative;
+        margin-bottom: 5%;
+      }
+      .ourMissionDivh2{
+        font-size: 4em;
+        font-weight: 700;
+        color: #006BB4;
+        background-color: #5cc1cf;
+        background-size: 100%;
+        background-image: linear-gradient(45deg, #5CC1CF 20%, #026CB5 40%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+      .ourMissionDivp{
+        padding-top: 2%;
+        padding-right: 2%;
+        color: black;
+        font-weight: 700;
+        font-size: 1.5em;
+        padding-bottom: 5%;
+        line-height: 1.5;
+      }
+
+      /* section 3 */
+      .section3{
+        padding:2%;
+        overflow:hidden;
+    }
+    .section3h2 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #006BB4;
+      font-weight: 700;
+      background-color: #5cc1cf;
+      background-image: linear-gradient(to right, #5cc1cf 5%, #026cb5 25%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      width: 100%;
+      display: inline-block;
+      text-align: left;     
+      animation: weeee 6s linear infinite;
+      position: relative;
+    }
+    @keyframes weeee {
+      from {left: 0px;}
+      to {left: 100%;}
+    }
+    .blackBorderLineAbout {
+      width: 20%;
+      height: 2px;
+      margin: 0px 15px;
+    }
+    .section3-2{
+      background-color: #5cc1cf;
+      background-image: linear-gradient(to right,#5CC1CF 0%,#A2d9ff 30%,#fff 100%);
+      background-size: 100%;
+      padding:5%;
+      z-index:10;
+      position: relative;
+    }
+   
+    .section3-2-2{
+      width:100%;
+    }
+    .section3-2-1p{
+      font-size: 2em;
+    }
+    .sliderVideo
+    {
+      width:250px;
+      height:300px;
+    }
+    .sliderSection1-1{
+      width:55%;
+      padding-top:20%;
+    }
+    .sliderSection1-2{
+      width:45%;
+      text-align: center;
+    }
+    .carousel-control, .carousel-control:focus, .carousel-control:hover {
+      color:white!important;
+      opacity:100%;
+      position:relative;
+      background-color: black;
+      border-radius:50%;
+      height: 40px;
+      width: 40px;
+      line-height: 26px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 6px;
+    }
+    .carousel-indicators li {
+      display: inline-block;
+      width: 45px;
+      height: 3px;
+      margin: 1px;
+      text-indent: -999px;
+      cursor: pointer;
+      background-color: grey;
+      border: 1px solid grey;
+      border-radius: 0px;
+    }
+    .carousel-indicators .active {
+      width: 45px;
+      height: 3px;
+      margin:1px;
+      background-color: black;
+      border: 1px solid black;
+      border-radius: 0px;
+      position:relative!important;
+    }
+    .carousel-indicators {
+      position: relative!important;
+      bottom:0px;
+      padding-top:10px;  
+      left: 0px;
+      z-index: 15;
+      width: 100%;
+      padding-left: 0;
+      margin-left: 0px;
+      text-align: left;
+      list-style: none;
+    }
+    .sliderconstant{
+      width: 52%;
+      background-color: #5cc1cf;
+      background-image: linear-gradient(to left,#5CC1CF 5%,#026CB5 100%);
+      padding-top: 0%;
+      position: absolute;
+      z-index: -1;
+      padding: 2% 5%;
+      color: white;
+      margin-left:5%;
+    }
+    .countryImg{
+      width:65%;
+    }
+    .sliderSubSectionP{
+      font-size: 1em;
+      font-weight: 600;
+      padding-left:5%;
+      padding-top:2%;
+      padding-right: 30%;
+    }
+    .sliderSubSectionLiH2{
+      font-size: 4em;
+      font-weight: 800;
+        background-image: linear-gradient(45deg, #F1F9FF, #B5F6FF);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+    .sliderSubSectionLiP{
+      font-size: 1.1em;
+      padding-top: 3%;
+      font-weight: 300;
+    }
+    .item {
+      transition: none!important;
+    }
+    .carouselControlDiv{
+      background: white;
+      padding: 3%;
+      border-radius: 20px;
+      width: 65%;
+      margin-left: 30%;
+      margin-top: -2%;
+    }
+    .carouselDivMain-1{
+      width:70%;
+      padding-left:5%;
+    }
+    .carouselDivMain-2{
+      width:30%;
+    }
+    </style>
+</head>
+<body>
+  <div>
+    <section class="banner" >
+      <div class="banner-video">
+      </div>
+      <img src="#WORKSPACE_FILES#lilogo.png" class="lilogo">
+      <div class="banner-text">
+        <h1>Who we are?</h1>
+        <div class="section1 d-flex">
+          <div class="section1-1">
+            <strong>Lightidea is an Oracle Cloud partner,</strong> helping its clients to sustainably
+            improve and manage their business performance through the entire
+            management process by developing the business concepts, strategies,
+            implementing proven performance management solution for enterprises
+            providing customized end user and <strong>offering 24*7 application support.</strong>
+          </div>
+          <div class="section1-2">
+            Lightidea Information Consultancy offers <strong>end-to-end system integration
+            services for a host of Oracle business applications.</strong> Our pragmatic
+            approach to system integration stems from our extensive implementation
+            experience which is infused with standard <strong>project management principles
+            and industry best practices with Oracle unified methodology.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="menuTopList">
+        <ul class="menuListUl">
+          <li><img src="#WORKSPACE_FILES#searchIcon.png" class="searchIcon"></li>
+          <li><button class="demoMenuButton">Demo</button></li>
+          <li class="loginButton"> Login</li>
+          </ul>
+      </div>
+      <div>
+        <img src="#WORKSPACE_FILES#menuIcon.png"class="menuIcon" >
+      </div>
+    </section>
+      <div class="section2">
+        <div class="d-flex section2-1">
+          <div class="section2-1ImgDiv">
+            <img src="./assets/whoweare/sec2left1.webp" class="section2-1Img">
+          </div>
+          <div class="rightTextDiv">
+            <div class="d-flex section2-2-1">
+              <div class="section2-2-1-1">
+                <div class="section2-2-1-1-1 textDivSec1">
+                  <div class="d-flex">
+                    <div>
+                      <img src="./assets/whoweare/dotIcon.svg">
+                    </div>
+                    <div>
+                      <p class="sec2TextHed">01</p>
+                    </div>
+                  </div>
+                  <p class="sec2Text">
+                    Continuously improving the quality of our services by embracing best-practices and new needs.
+                  </p>
+                </div>  
+                <div class="section2-2-1-1-3 textDivSec1">
+                  <div class="d-flex">
+                    <div>
+                      <img src="./assets/whoweare/dotIcon.svg">
+                    </div>
+                    <div>
+                      <p class="sec2TextHed">03</p>
+                    </div>
+                  </div>
+                  <p class="sec2Text">
+                    Maintaining highly sophisticated starter kits for business needs.
+                  </p>
+                </div>
+              </div>
+              <div class="section2-2-1-2">
+                <div class="section2-2-1-2-2 textDivSec1">
+                  <div class="d-flex">
+                    <div>
+                      <img src="./assets/whoweare/dotIcon.svg">
+                    </div>
+                    <div>
+                      <p class="sec2TextHed">02</p>
+                    </div>
+                  </div>
+                  <p class="sec2Text">
+                    Provide an excellent services to corporates by adding a real value to the IT world to outline the oppurtunities and challenges of the digital evolution.
+                  </p>
+                </div>
+                <div class="section2-2-1-2-4 textDivSec1">  
+                  <div class="d-flex">
+                    <div>
+                      <img src="./assets/whoweare/dotIcon.svg">
+                    </div>
+                    <div>
+                      <p class="sec2TextHed">04</p>
+                    </div>
+                  </div>
+                  <p class="sec2Text">
+                    Maximizing our clients' value by efficiently implementing a proven solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex section2-2">
+          <div>
+            <div class="ourVisionDiv">
+              <h2>Our Vision</h2>
+              <p>
+                We strive towards beign a best-in-class consulting company providing Cloud Digital Transformation
+              </p>
+            </div>
+            <div class="rightText">
+              <div class="d-flex section2-3-1">
+                <div class="section2-2-1-1">
+                  <div class="section2-2-1-1-1 textDivSec1">
+                    <div class="d-flex">
+                      <div>
+                        <img src="./assets/whoweare/dotIcon.svg">
+                      </div>
+                      <div>
+                        <p class="sec2TextHed">01</p>
+                      </div>
+                    </div>
+                    <p class="sec2Text">
+                      Provide superior service in the areas of group resources planning, performance, reporting, web and mobile solutions.
+                    </p>
+                  </div>  
+                  <div class="section2-2-1-1-3 textDivSec1">
+                    <div class="d-flex">
+                      <div>
+                        <img src="./assets/whoweare/dotIcon.svg">
+                      </div>
+                      <div>
+                        <p class="sec2TextHed">03</p>
+                      </div>
+                    </div>
+                    <p class="sec2Text">
+                      Advise and support clients to focus their energy and resources towards their main competences.
+                    </p>
+                  </div>
+                </div>
+                <div class="section2-2-1-2">
+                  <div class="section2-2-1-2-2 textDivSec1">
+                    <div class="d-flex">
+                      <div>
+                        <img src="./assets/whoweare/dotIcon.svg">
+                      </div>
+                      <div>
+                        <p class="sec2TextHed">02</p>
+                      </div>
+                    </div>
+                    <p class="sec2Text">
+                      To cater a full-service design, support and top notch consulting to businesses evolving in the era of digital transformation
+                    </p>
+                  </div>
+                  <div class="section2-2-1-2-4 textDivSec1">  
+                    <div class="d-flex">
+                      <div>
+                        <img src="./assets/whoweare/dotIcon.svg">
+                      </div>
+                      <div>
+                        <p class="sec2TextHed">04</p>
+                      </div>
+                    </div>
+                    <p class="sec2Text">
+                      Practical knowledge and experience and proven solutions to guarantee the quality of our services.
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section2imgRight2">
+            <img src="./assets/whoweare/sec2right1.webp" class="section2imgRight2Img">
+            <div class="ourMissionDiv">
+              <h2 class="ourMissionDivh2">Our Mission</h2>
+              <p class="ourMissionDivp">
+                We aim to create a client relationship based on sustainability, mutual respect and fairness
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="section3-2 d-flex mobile">
+      <div class="section3-2-1">
+       
+      </div>
+      <div class="section3-2-2">
+        <div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="sliderconstant">
+                <h2 class="sliderSubSectionLiH2">LIGHTIDEA MENA PRESENCE</h2>
+                <p class="sliderSubSectionLiP">
+                  Lightidea IT Consultancy headquarter is <strong>situated in Abu Dhabi</strong> with the development center offices in <strong>UAE,
+                  Egypt and operations across MENA</strong>  
+                </p>
+                <br>
+              </div>
+              <div class="item active">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">Office 207, Al Nahyan Camp, Muroor Road,
+                            Abu Dhabi, United Arab Emirates
+                            P.O.BOX 110620
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/uae.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">3929 Muhammed Ali Genah،
+                            7443, Ghirnatah, Riyadh 13242, Saudi Arabia
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/saudiarabia.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">Office 595, 3rd Floor, CREA Apartment, Vinayaka
+                            Layout, Nagarabhavi 2nd Stage, Opposit Bisi Bisi Tindi, Bengaluru - 560 072.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/india.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">8 Amayer El Taameer - Sheraton -
+                            Misr aljadida, Egypt
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/egypt.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+     <div class="section3-2 d-flex mobile">
+      <div class="section3-2-1">
+       
+      </div>
+      <div class="section3-2-2">
+        <div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="sliderconstant">
+                <h2 class="sliderSubSectionLiH2">LIGHTIDEA MENA PRESENCE</h2>
+                <p class="sliderSubSectionLiP">
+                  Lightidea IT Consultancy headquarter is <strong>situated in Abu Dhabi</strong> with the development center offices in <strong>UAE,
+                  Egypt and operations across MENA</strong>  
+                </p>
+                <br>
+              </div>
+              <div class="item active">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">Office 207, Al Nahyan Camp, Muroor Road,
+                            Abu Dhabi, United Arab Emirates
+                            P.O.BOX 110620
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/uae.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">3929 Muhammed Ali Genah،
+                            7443, Ghirnatah, Riyadh 13242, Saudi Arabia
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/saudiarabia.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">Office 595, 3rd Floor, CREA Apartment, Vinayaka
+                            Layout, Nagarabhavi 2nd Stage, Opposit Bisi Bisi Tindi, Bengaluru - 560 072.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/india.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+              <div class="item ">
+                <div class="d-flex mobile">
+                  <div class="sliderSection1-1">
+                    <div class=" mobile carouselControlDiv" >
+                      <div class="d-flex">
+                        <div class="carouselDivMain-1">
+                          <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
+                          </ol>
+                        </div>
+                        <div class="carouselDivMain-2">
+                          <span class="leftCarouselImg">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-menu-left" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </span>
+                          <span class="rightCarouselImg">
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-menu-right" style="font-size:16px;padding: 10px;"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </span> 
+                        </div>
+                      </div>
+                      <div class="sliderSubSection">
+                        <div class="">
+                          <p class="sliderSubSectionP">8 Amayer El Taameer - Sheraton -
+                            Misr aljadida, Egypt
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sliderSection1-2">
+                    <img src="./assets/egypt.gif"class="countryImg">
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>   
+</body>
+</html>

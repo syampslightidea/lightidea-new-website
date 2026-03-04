@@ -1,0 +1,73 @@
+<!-- AZUL CODING --------------------------------------- -->
+<!-- JavaScript - Drag & Drop Files & Elements -->
+<!-- https://youtu.be/lSCLnWoa6Tw -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link src="./script.js">
+        <title>Drag &amp; Drop - Azul Coding</title>
+        <style>
+            body {
+                margin: 30px;
+            }
+            * {
+                font-family: 'Roboto', sans-serif;
+            }
+            p, li {
+                font-size: 18px;
+            }
+            .container {
+                display: flex;
+                gap: 15px;
+            }
+            .dropzone {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 34px;
+                border: 2px solid #1576C1;
+                background-color: #94DBFD;
+                border-radius: 10px;
+                transition: transform 0.5s;
+            }
+            .dropzone.dragover {
+                transform: scale(0.9);
+            }
+
+
+            /* Part 2 */
+            .box {
+                height: 270px;
+                width: 370px;
+                cursor: move;
+                user-select: none;
+            }
+            .box[data-item="A"] {
+                background-color: #FFDCA9;
+                border-color: #F97D02;
+            }
+            .box[data-item="B"] {
+                background-color: #BCF8B9;
+                border-color: #3CB43C;
+            }
+            
+          
+            .witem{
+                width:350px;
+                height:250px;
+            }
+        </style>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- Part 2 -->
+        <div class="container">
+            <div draggable="true" class="dropzone box" data-item="A" ><img src="../assets/section4imgleft.png"class="witem"></div>
+            <div draggable="true" class="dropzone box" data-item="B"><img src="../assets/section4img.png" class="witem"></div>
+            <div draggable="true" class="dropzone box" data-item="C"><img src="../assets/section4imgright.png"class="witem" ></div>
+        </div>
+
+    </body>
+</html>

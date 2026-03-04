@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <!-- popins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- popins font end -->
+     <!-- bootstrap cdn -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider 3
+    </title>
+    <style>
+      body{
+        background-color: lightblue;
+      }
+      .d-flex{
+        display:flex;
+      }
+      .sliderSection1-1{width:50%;}
+      .sliderSection1-2{width:50%;}
+      .carousel-indicators .active {
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        background-color: #000;
+      }
+      .carousel-indicators li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      .slide-content{
+        width:55%;
+      }
+      .slide-image{
+        width:45%;
+      }
+      .slide-image img{
+        width:95%;
+      }
+      .slide-content h3{
+        font-size:3rem;
+        font-weight: 700;
+        padding-top:2%;
+        padding-bottom:1%;
+      }
+      .slide-content p{
+        font-size:2rem;
+        font-weight: 500;
+        padding:2% 15% 0% 0%;
+      }
+      .epmButton{
+        background-image: linear-gradient(45deg, #5cc1cf, #026cb5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+        font-size:2rem;
+        font-weight:800;
+        padding-bottom:5%;
+      }
+      .slide-content img{
+        padding-top:5%;
+        width: 90%;
+      }
+    </style>
+</head>
+<body>
+  <script>
+    var button = document.getElementById('scrollRightSide');
+    button.onclick = function () {
+      console.log("clicked");
+         var container = document.getElementById('solutionDiv');
+        sideScroll(container,'right',25,100,10);
+    };
+    
+    var back = document.getElementById('scrollLeftSide');
+    back.onclick = function () {
+      
+      console.log("clicked");
+        var container = document.getElementById('solutionDiv');
+        sideScroll(container,'left',25,100,10);
+    };
+    
+    function sideScroll(element,direction,speed,distance,step){
+        scrollAmount = 0;
+        var slideTimer = setInterval(function(){
+            if(direction == 'left'){
+                element.scrollLeft -= step;
+            } else {
+                element.scrollLeft += step;
+            }
+            scrollAmount += step;
+            if(scrollAmount >= distance){
+                window.clearInterval(slideTimer);
+            }
+        }, speed);
+    }
+  </script> 
+    <div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/profitabilityBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Profitability and Cost Management</h3>
+                <p>Understand your most profitable products or lines of business and, inversely, your biggest costs, to make more informed decisions about where to take the business. Build transparent allocation models for profitability analysis, shared service costing, IT financial management, tax transfer pricing.</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/financialConsolidationSmall.webp"><br>
+                <h3>Financial Consolidation and Close</h3>
+              </div>	
+            </div>
+          </div>
+          <div class="item">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/financialConsolidationBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Financial Consolidation and Close</h3>
+                <p>Adapt quickly to changing business and compliance requirements while delivering faster, more accurate, and transparent reporting. Leverage built-in functionality that covers the full spectrum of end-to-end close tasks.</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/accountreconciliationSmall.webp"><br>
+                <h3>Account Reconciliation</h3>
+              </div>	
+            </div>
+          </div>
+          <div class="item ">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/accountreconciliationBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Account Reconciliation</h3>
+                <p>Automate account reconciliations and transaction matching. Improve the efficiency and accuracy of your financial statements while addressing security and risk typically associated with the process.</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/taxReportingSmall.webp"><br>
+                <h3>Tax Reporting</h3>
+              </div>	
+            </div>
+          </div>
+          <div class="item">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/taxReportingBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Tax Reporting</h3>
+                <p>Align tax with corporate financial reporting for better visibility and compliance. Deliver transparent corporate tax processes—including tax provision and country by country reporting (CbCR).</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/narrativeReportSmall.webp"><br>
+                <h3>Narrative Reporting</h3>
+              </div>	
+            </div>
+          </div>
+          <div class="item">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/narrativeReportBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Narrative Reporting</h3>
+                <p>Stay ahead of internal and external reporting requirements with narrative reporting for collaboratively authoring and publishing financial, management, and regulatory report packages.</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/freeformSmall.webp"><br>
+                <h3>Freeform</h3>
+              </div>  	
+            </div>
+          </div>
+          <div class="item">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/freeformBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Freeform</h3>
+                <p>Drive better decisions with the multidimensional analysis, planning, modeling, and reporting in Oracle Fusion Cloud Enterprise Performance Management (EPM). Oracle Cloud Freeform delivers the familiar power and flexibility of Essbase with the scalability and governance of SaaS. If you can imagine it, you can build it.</p>
+                <br><a class="epmButton">Request a demo</a><br> 
+                <img src="./assets/epm/enterpriseDataManagementSmall.webp"><br>
+                <h3>Enterprise Data Management</h3>
+              </div>  	
+            </div>
+          </div>
+          <div class="item">
+            <div class="d-flex">
+              <div class="slide-image slider-link next">
+                <img src="./assets/epm/enterpriseDataManagementBig.webp">
+                <div class="overlay"></div>
+              </div>
+              <div class="slide-content">
+                <h3>Enterprise Data Management</h3>
+                <p>Manage business change with enterprise data management, including enterprise data governance, change data visualization, and hierarchy management.</p>
+                <br><a class="epmButton">Request a demo</a><br>
+                <img src="./assets/epm/profitabilitySmall.webp"><br>
+                <h3>Profitability and Cost Management</h3>
+              </div>  	
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+      </div>
+      
+    </div> 
+</body>
+</html>

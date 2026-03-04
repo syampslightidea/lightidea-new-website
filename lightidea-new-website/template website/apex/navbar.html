@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <title>navbar</title>
+    <style>
+        .t-Header{
+            display:none;
+        }
+        .a-Menu-label {
+            font-size:1.4rem;
+        }
+        .t-Header-nav-list li {
+            font-size: 1.4rem;
+            font-weight: 400;
+            padding: 8px;
+        }
+        .row .col.col-end {
+            padding-inline-end: var(--ut-grid-gutter-width, 0px);
+        }
+        .row .col.col-start {
+            padding-inline-start: var(--ut-grid-gutter-width, 0px);
+        }
+        ::-webkit-scrollbar {height: 3px;}
+        ::-webkit-scrollbar-track {box-shadow: inset 0 0 2px #f1f9ff;border-radius: 2px;}
+        ::-webkit-scrollbar-thumb {background:#f1f9ff;height:3px;}
+        .t-Footer{display:none;}
+        .container{width:100%;}
+        p{line-height: 2.5rem;}
+        li{line-height: 2.5rem;font-size:1.6rem;}
+        body,p,h1,h2,h3,h4,h5,h6{
+            font-family: "Poppins", sans-serif;
+        }
+        .section3ImgDiv::-webkit-scrollbar {
+            display: none;
+        }
+        .section3ImgDiv {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .d-flex{
+            display: flex;
+        }
+        section{
+            padding:2% 10%;
+        }
+        .scaleImage{
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+        .scaleImage:hover
+        {
+            box-shadow: 0px 0px 10px #444;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.1);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.1);
+            transition: all 200ms ease-in;
+            transform: scale(1.1);
+        }
+        .textDiv1,.imageDiv1{
+            width:50%;
+        }
+        .textDiv1{
+            margin: auto;
+        }
+        .imageDiv1 img{
+            width:100%;
+            height: 450px;
+            margin:auto;
+        }
+        .section1{
+            padding: 5% 10%;
+            background-color: #D9D9D9;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgb(0 0 0 / 90%)), url(#WORKSPACE_FILES#home/homebanner.png);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: left;
+        }
+        .bannerHeading{
+            font-size:6rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .bannerSubHeading{
+            font-size:5rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .bannerText{
+            font-size: 1.7rem;
+            font-weight: 500;
+            color:#fff;
+        }
+        .section2Heading,.section5Heading{    
+            font-size: 5rem;
+            color: #3594D6;
+            text-decoration: underline;
+            text-underline-offset: 30px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #B5BDC1;
+        }
+        .textDiv1 ul{
+            font-weight: 500;
+            font-size: 1.6rem;   
+        }
+        .textDiv1Text{
+            padding-top: 5%;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .textDiv1Heading{
+            font-size:4rem;
+        }
+        .leftDiv{
+            padding-right:20px;
+        }
+        .rightDiv{
+            padding-left:20px;
+        }
+        .imageDiv1Mobile{
+            display:none;
+        }
+        .section3Heading{  
+            font-size: 5rem;
+            color: #3594D6;
+        }
+        .section3Text{padding-bottom:2%;
+            padding-right:30%;
+            font-size:2rem;
+            font-weight:500;
+        }
+        .section3Image :first-child{
+            border-left:0px;
+        }
+        .section3Image{
+            border-left: 1px solid black;
+            height: 250px;
+            width: 100%;
+        }
+        .imgMainDiv{
+            width:25%;
+            overflow:hidden;
+        }
+        .section3ImgDiv{
+            width:100%;
+            overflow:scroll;
+        }
+        .imgMainDiv:hover{
+            width:50%;
+        }
+        .imageDivText{
+            display:none;
+            padding-right:5px;font-size:1.6rem;
+        }
+        .imgMainDiv:hover .imageDivText{
+            display:block;
+            padding-left:10px;
+        }
+        .imgMainDiv:hover h2{
+            font-size:3rem;
+            font-weight: 700;
+            padding-left:10px;
+        }
+        .section4{
+            background-color: #D7DFE4;
+            margin: 0% 5%;
+            padding: 5%;
+        }
+        .section4Heading{
+            font-size: 6rem;
+            color: #026CB5; 
+            padding-bottom:20px;
+            font-weight: 400;
+        }
+        .section4InnerMainDiv{
+            padding-right: 10%;
+        }
+        
+        .section4InnerDivHeading{
+            font-weight: 700;
+            font-size: 3rem;
+            padding-bottom: 15px;
+        }
+        .section4InnerDivText{
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        .section4InnerSubDiv{
+            padding-right:5%;
+        }
+        .imageDiv1{
+            margin-bottom:30px;
+        }
+        .section6{
+            background-color: #CEEBFF;
+        }
+        .section7{
+            background-color: #0E2D3D;
+            color:#fff;
+        }
+        #lilogo{
+            width: 150px;
+        }
+        .footer1 h2{
+            font-size: 4rem;
+            font-weight: 700; 
+        }
+        .footer1 p{
+            font-size: 1.8rem;
+            font-weight: 500; 
+        }
+        .footer2P{
+            font-size: 1.8rem;
+            font-weight: 400; 
+        }
+        .footer2 h3{
+            font-size: 3rem;
+            font-weight: 600;
+        }.footer2contactDetails{
+            padding:0% 10% 5% 0%
+        }
+        .footer2contactText p {font-size:1.6rem;}    
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 4rem;
+            }
+            .bannerSubHeading {
+                font-size: 3rem;
+            }
+            .bannerText {
+                font-size: 1.5rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 5px;
+            }
+            .leftDiv {
+                padding-right: 10px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1 img {
+                width: 100%;
+                height: 400px;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 5px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2rem;
+            }
+            .footer1 p {
+                font-size: 1.5rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+        }
+        @media  (max-width: 501px) {
+            li{font-size:1.2rem;}
+            .d-flex{
+                display: block;
+            }
+            .textDiv1, .imageDiv1 {
+                width:100%;
+            }
+            .section1 {
+                padding: 5%;
+            }
+            .bannerHeading {
+                font-size: 2.5rem;
+            }
+            .bannerSubHeading {
+                font-size: 2rem;
+            }
+            .bannerText {
+                font-size: 1.2rem;
+            }
+            .section2Heading, .section5Heading {
+                font-size: 2.5rem;
+            }
+            .textDiv1Heading {
+                font-size: 2rem;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            .textDiv1Text {
+                font-size: 1.2rem;
+            }
+            .textDiv1 ul {
+                font-size: 1.2rem;
+                padding-left: 0px;
+            }
+            .leftDiv,.rightDiv {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+            .section3Heading {
+                font-size: 2.5rem;
+            }
+            .section3Text {
+                padding-right: 0%;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv {
+                width: 100%;
+            }
+            .imgMainDiv:hover {
+                width: 100%;
+            }
+            .imgDiv h2{
+                font-size: 1.5rem;
+            }
+            .imageDiv1Mobile {
+                display: block;
+                margin-bottom: 10%;
+            }
+            .imageDiv1Desk{
+                display:none;
+            }
+            .imageDiv1Mobile img , .imageDiv1 img {
+                width: 100%;
+                height: unset;
+            }
+            .imgMainDiv:hover .imageDivText {
+                padding-left: 5px;
+                font-size: 1.2rem;
+            }
+            .imgMainDiv:hover h2 {
+                font-size: 2rem;
+                padding-left: 0px;
+            }
+            .section4Heading {
+                font-size: 4rem;
+            }
+            .section4InnerDivHeading {
+                font-size: 2rem;
+            }
+            .section4InnerDivText {
+                font-size: 1.2rem;
+            }
+            .section4InnerMainDiv {
+                padding-right: 0%;
+            }
+            .footer1 h2 {
+                font-size: 2.5rem;
+            }
+            .footer1 p {
+                font-size: 1.2rem;
+            }
+            .footer2P {
+                font-size: 1.4rem;
+            }
+            #lilogo {
+                width: 80px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+            .footer2contactText p {
+                font-size: 1.2rem;
+            }
+            .footer2 h3 {
+                margin-top: -10px;
+            margin-bottom:-5px;
+            }
+        }
+    /*navbar
+    .t-Header{
+            display:none;
+        }
+    */
+    .navbar {
+        position: fixed;
+        background-color:#fff;
+        margin-bottom: 15px;
+        border: 1px solid transparent;
+        display: flex;
+    }
+    .navbar-nav>li {
+        float: left;
+        text-decoration: none;
+        list-style: none;
+        padding: 10px;
+    }
+    .navbar-nav {
+        float: right;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .navbar-brand {
+        float: left;
+        height: 80px;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    .dropdown-menu>li>a {
+        display: block;
+        padding: 5px 20px;
+    }
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        width: 100%;
+    }
+    /*
+ style="color: #033388;font-weight: 600;text-decoration:underline;"
+        */
+    </style>
+</head>
+<body>
+
+  
+  <!-- Modal -->
+   
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document" >
+      <div class="modal-content" style="background-color: #4D3881;color: white;background-image: linear-gradient(to right, #3A29AB, #D23AEB);margin-top: 20%;">
+        <div class="modal-header" style="border:0px">
+          <h5 class="modal-title" id="exampleModalLongTitle" style="font-size:3rem;text-align: center;padding-top:15px">Lightidea at LEAP 2025</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -40px;font-size: 3rem;color: #fff;opacity: 1;font-weight: 500;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="./leap2025Logo.jpg" style="width: 200px;margin: 0 31%;">
+            <br><br>
+            <p style="font-size: 1.6rem;line-height: 2.5rem;padding: 10px 20px 10px 20px;">
+              Join us at LEAP 2025, The global tech event happening in Riyadh, Saudi Arabia, where innovation meets opportunity. Lightidea, a leading IT consultancy, is proud to showcase our cutting-edge solutions and services designed to drive digital transformation and business success.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <a class="navbar-brand" href="#"><img src=" #WORKSPACE_FILES#common/lightidea_logo.png"style="width:65px;height:60px;"></a>
+        <!--./lilogo.png #WORKSPACE_FILES#common/lightidea_logo.png <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button> 
+        -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/home" >Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About us<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/whoweare">Who we are</a></li>
+                  <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/whyus">Why us</a></li>
+                  <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/success-stories">Success Stories</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technology Partners<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/oracle-erp">Oracle ERP</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/fusion-cloud">Oracle Fusion Cloud</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/e-business-suite">Oracle E-Business Suite</a></li>
+                     <li ><a class="nav-link" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/oracle-epm">Oracle EPM</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#itStrategy">IT Strategy and Consulting</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#erp">Enterprise Application Services</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#cloud">Cloud Solutions</a></li>
+                     <li ><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#dataAnalytics">Data Analytics and Business Intelligence</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#cyberSecurity">Cybersecurity Services</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#appDevelopment">Application Development and Integration</a></li>
+                     <li ><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#digitalTransformation">Digital Transformation</a></li>
+                     <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#itServices">Managed IT Services</a></li>
+                     <li ><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#epm">Enterprise Performance Management (EPM)</a></li>
+                     <li ><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/services#trainingServices">Training and Support Services</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/community">Community</a></li>
+                    <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/blogs">Blogs</a></li>
+                    <li><a href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/events">Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/contact-us">Contact us</a>
+            </li>
+            <li class="nav-item" style="background-color: #337AB7;color: #fff;border-radius: 8px;padding: 5px 25px;font-weight: 400;margin-left: 15px;margin-bottom:10px">
+                <a class="nav-link" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/demo" style="color:#fff">Demo</a>
+            </li>
+            <li class="nav-item" style="background-color: #337AB7;color: #fff;border-radius: 8px;padding: 5px 25px;font-weight: 400;margin-left: 15px;margin-right:10px">
+                <a class="nav-link" href="https://apex.oracle.com/pls/apex/r/syampsijk/lightidea107393/login" style="color:#fff">Login</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    </body>
+    <!-- JavaScript to open the modal -->
+  <script>
+    $(document).ready(function() {
+      $('#myModal').modal('show');
+    });
+  </script>
+  </html>
